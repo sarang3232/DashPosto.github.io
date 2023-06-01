@@ -140,3 +140,31 @@ var azucar=[99,99.51,100,100,99.57,99.90,99.88,99.78,98.90,96.84,90.42,99.52,94.
 //******************Rendimiento de jarabe**********************
 // Dias      1   2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19   20  21  22  23  24  25  26  27  28  29  30
 var jarabe=[99,99.51,100,100,99.57,99.90,99.88,99.78,98.90,96.84,90.42,99.52,94.76,99.77,99.89,99.83,99.92,99.80,99.80,99.94,100,100]
+
+
+
+
+
+
+
+<script>
+
+// Función para actualizar el contenido de la página con los nuevos datos1
+function actualizarContenido() {
+  // Actualiza los elementos HTML con los valores de las variables
+  document.getElementById('Eficienciadeproduccion').textContent = Eficienciadeproduccion;
+  document.getElementById('Rendimientojarabe').textContent = Rendimientojarabe;
+  document.getElementById('Desperfectos').textContent = Desperfectos;
+  document.getElementById('Observacion67').textContent = Observacion67;
+  document.getElementById('Observacion78').textContent = Observacion78;
+  document.getElementById('Observacion89').textContent = Observacion89;
+  document.getElementById('Observacion910').textContent = Observacion910;
+  // ...
+}
+
+// Llama a la función de actualización de datos desde datos.js
+actualizarDatos();
+
+// Llama a la función de actualización del contenido de la página
+actualizarContenido();
+</script>
