@@ -5,120 +5,120 @@ function actualizarDatos() {
     // ******* INDICADORES DEL TABLERO L8 *****************
       // MODIFICA LOS VALORES SEGUN EL DIA
     
-      Eficienciadeproduccion = '60%';
-      Rendimientojarabe=       '99.7%'; 
+      Eficienciadeproduccion = '72%';
+      Rendimientojarabe=       '99.5%'; 
       Desperfectos=            '1.7%';
       CumplimientoLimpieza=    '100%'; 
     
     //******* MEDICCION HORA A HORA *********************
     //           6-7am   7-8am    8-9am   9-10am   10-11am   11-12pm   12-13pm    13-14pm
-    Teorica= [  2500,    5000,   7501,   10001,    12501,    15501,     17501,      20002];
+    Teorica= [  2500,    5000,7501,10001,12501,15501,17501,20002];
     
     //           6-7am   7-8am    8-9am   9-10am   10-11am   11-12pm   12-13pm    13-14pm
-    Real= [      2670,   5293,    7920,   7920,    9501,     10690,    12307,     14405];
+    Real= [    18603,48533];
     
     
     //*********** EFICIENCIA HORA ***********************
     
     //                         Porcentaje hora 6-7am
-    Hora67.setAttribute('style', 'width: 75%;'); 
-    Hora67l.innerHTML =                  '75%';
+    Hora67.setAttribute('style', 'width: 62%;'); 
+    Hora67l.innerHTML =                  '62%';
     
     //                         Porcentaje hora 7-8am
-    Hora78.setAttribute('style', 'width: 75%;'); 
-    Hora78l.innerHTML =                  '75%';
+    Hora78.setAttribute('style', 'width: 99.77%;'); 
+    Hora78l.innerHTML =                  '99.77%';
     
     //                         Porcentaje hora 8-9am
-    Hora89.setAttribute('style', 'width: 75%;'); 
-    Hora89l.innerHTML =                  '75%';
+    Hora89.setAttribute('style', 'width: 0%;'); 
+    Hora89l.innerHTML =                  '0%';
     
     //                         Porcentaje hora 9-10am
-    Hora910.setAttribute('style', 'width: 75%;'); 
-    Hora910l.innerHTML =                  '75%';
+    Hora910.setAttribute('style', 'width: 0%;'); 
+    Hora910l.innerHTML =                  '0%';
     
     //                         Porcentaje hora 10-11am
-    Hora1011.setAttribute('style', 'width: 75%;'); 
-    Hora1011l.innerHTML =                  '75%';
+    Hora1011.setAttribute('style', 'width: 0%;'); 
+    Hora1011l.innerHTML =                  '0%';
     
     //                         Porcentaje hora 11-12pm
-    Hora1112.setAttribute('style', 'width: 75%;'); 
-    Hora1112l.innerHTML =                  '75%';
+    Hora1112.setAttribute('style', 'width: 0%;'); 
+    Hora1112l.innerHTML =                  '0%';
     
     //                         Porcentaje hora 12-13pm
-    Hora1213.setAttribute('style', 'width: 75%;'); 
-    Hora1213l.innerHTML =                  '75%';
+    Hora1213.setAttribute('style', 'width: 0%;'); 
+    Hora1213l.innerHTML =                  '0%';
     
     //                         Porcentaje hora 13-14am
-    Hora1314.setAttribute('style', 'width: 75%;'); 
-    Hora1314l.innerHTML =                  '75%';
+    Hora1314.setAttribute('style', 'width: 0%;'); 
+    Hora1314l.innerHTML =                  '0%';
     
     
     
     //***********Tiempo perdido y acumulado************
     
     //             6-7am   7-8am    8-9am   9-10am   10-11am   11-12pm   12-13pm    13-14pm         
-    TiempoPerdido=['0',      '1',     '1',   '60',    '24',     '33',     '24',      '12'];
+    TiempoPerdido=['23',      '0' ];
     
     
     //             6-7am   7-8am    8-9am   9-10am   10-11am   11-12pm   12-13pm    13-14pm         
-    TiempoAcumulado=['0',    '1',     '2',    '62',    '86',     '119',   '143',     '143'];
+    TiempoAcumulado=['23',    '23'];
     
     
     
     //*************Pon las observaciones de cada intervalo de hora************ 
     
     //                                   Observacion de 6-7 am
-    Observacion67.innerHTML =                'Probando32'; 
+    Observacion67.innerHTML =                'Inicio producción, después inventario'; 
     
     //                                   Observacion de 7-8 am
-    Observacion78.innerHTML =                'Nuevo texto'; 
+    Observacion78.innerHTML =                'Ninguno'; 
     
     //                                   Observacion de 8-9 am
-    Observacion89.innerHTML =                'Nuevo texto'; 
+    Observacion89.innerHTML =                'NA'; 
     
     //                                   Observacion de 9-10 am
-    Observacion910.innerHTML=                   'Nuevo texto'; 
+    Observacion910.innerHTML=                   'NA'; 
     
     //                                   Observacion de 10-11 am
-    Observacion1011.innerHTML =                'Nuevo texto'; 
+    Observacion1011.innerHTML =                'NA'; 
     
     //                                   Observacion de 11-12 am
-    Observacion1112.innerHTML =                'Nuevo texto'; 
+    Observacion1112.innerHTML =                'NA'; 
     
     //                                   Observacion de 12-13 pm
-    Observacion1213.innerHTML =                'Nuevo texto'; 
+    Observacion1213.innerHTML =                'NA'; 
     
     //                                   Observacion de 13-14 pm
-    Observacion1314.innerHTML =                'Nuevo texto'; 
+    Observacion1314.innerHTML =                'NA'; 
     
     
     
     //*****************Programa de produccion************* 
     //********************************Pon el sabor a producir 1*/
-    programa1.innerHTML =                'probando21 ';
+    programa1.innerHTML =                'Naranja-Piñax500ml ';
     
     //********************************Pon el sabor a producir 2 */
-    programa2.innerHTML =                'Hit ';
+    programa2.innerHTML =                'Frutas tropicales ml ';
     
     //********************************Pon el sabor a producir 3 */
-    programa3.innerHTML =                'Hit ';
+    programa3.innerHTML =                'Mora 500 ml';
     
     
     //********************************Pon la cantidad de cajas y unidades 1*/
-    caja1.innerHTML =                'Cajas #  / Unidades # ';
+    caja1.innerHTML =                'Cajas 40000  / Unidades 480000';
     
     //********************************Pon la cantidad de cajas y unidades 2 */
-    caja2.innerHTML =                'Cajas #  / Unidades # ';
+    caja2.innerHTML =                'Cajas 20000  / Unidades 240000 ';
     
     //********************************Pon la cantidad de cajas y unidades 3 */
-    caja3.innerHTML =                'Cajas #  / Unidades # ';
+    caja3.innerHTML =                'Cajas 3000  / Unidades 36000 ';
     
     //*********************Marca si ya se termino la produccion del sabor********
     //********************Primer sabor**************************************** */
     marcar1.checked = false; // Poner false, si no se ha termino, o true si ya termino
     
     //********************Segundo sabor**************************************** */
-    marcar2.checked = true; // Poner false, si no se ha termino, o true si ya termino
+    marcar2.checked = false; // Poner false, si no se ha termino, o true si ya termino
     
     //********************Tercer sabor**************************************** */
     marcar3.checked = false; // Poner false, si no se ha termino, o true si ya termino
@@ -126,11 +126,11 @@ function actualizarDatos() {
 
 //******************Eficiencia% de produccion por dia**********************
 // Dias              1   2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19   20  21  22  23  24  25  26  27  28  29  30
-var Eficienciapro= [0, 0,0,0,0,0,0,0, 0,0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0];
+var Eficienciapro= [79.52, 0,0,0,0,0,0,0, 0,0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0];
 
 //******************Utilizacion de linea 8**********************
 // Dias              1   2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19   20  21  22  23  24  25  26  27  28  29  30
-var Utilizacionpro= [0, 0,0,0,0,0,0,0, 0,0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0];
+var Utilizacionpro= [60.54, 0,0,0,0,0,0,0, 0,0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0];
 
 //******************Rendimiento de azucar**********************
 // Dias      1   2  3  4  5  6  7  8  9  10  11  12  13  14  15  16  17  18  19   20  21  22  23  24  25  26  27  28  29  30
