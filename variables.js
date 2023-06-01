@@ -68,7 +68,7 @@ function actualizarDatos() {
     //*************Pon las observaciones de cada intervalo de hora************ 
     
     //                                   Observacion de 6-7 am
-    Observacion67.innerHTML =                'Nuevo texto'; 
+    Observacion67.innerHTML =                'Probando'; 
     
     //                                   Observacion de 7-8 am
     Observacion78.innerHTML =                'Nuevo texto'; 
