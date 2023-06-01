@@ -5,7 +5,7 @@ function actualizarDatos() {
     // ******* INDICADORES DEL TABLERO L8 *****************
       // MODIFICA LOS VALORES SEGUN EL DIA
     
-      Eficienciadeproduccion = '0%';
+      Eficienciadeproduccion = '90%';
       Rendimientojarabe=       '99.7%'; 
       Desperfectos=            '1.7%';
       CumplimientoLimpieza=    '100%'; 
