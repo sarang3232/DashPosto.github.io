@@ -68,7 +68,7 @@ function actualizarDatos() {
     //*************Pon las observaciones de cada intervalo de hora************ 
     
     //                                   Observacion de 6-7 am
-    Observacion67.innerHTML =                'Nuevo texto'; 
+    Observacion67.innerHTML =                'Probando32'; 
     
     //                                   Observacion de 7-8 am
     Observacion78.innerHTML =                'Nuevo texto'; 
@@ -95,7 +95,7 @@ function actualizarDatos() {
     
     //*****************Programa de produccion************* 
     //********************************Pon el sabor a producir 1*/
-    programa1.innerHTML =                'Hit ';
+    programa1.innerHTML =                'probando21 ';
     
     //********************************Pon el sabor a producir 2 */
     programa2.innerHTML =                'Hit ';
