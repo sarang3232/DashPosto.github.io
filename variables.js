@@ -57,7 +57,7 @@ function actualizarDatos() {
     //***********Tiempo perdido y acumulado************
     
     //             6-7am   7-8am    8-9am   9-10am   10-11am   11-12pm   12-13pm    13-14pm         
-    TiempoPerdido=['23',      '0' ,'43','60','60','22''6'];
+    TiempoPerdido=['23',      '0' ,'43','60','60','22','6'];
     
     
     //             6-7am   7-8am    8-9am   9-10am   10-11am   11-12pm   12-13pm    13-14pm         
