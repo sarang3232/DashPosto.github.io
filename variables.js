@@ -15,7 +15,7 @@ function actualizarDatos() {
     Teorica= [  2500,    5000,7501,10001,12501,15501,17501,20002];
     
     //           6-7am   7-8am    8-9am   9-10am   10-11am   11-12pm   12-13pm    13-14pm
-    Real= [    18603,48533];
+    Real= [    18603,48533,57277];
     
     
     //*********** EFICIENCIA HORA ***********************
@@ -29,8 +29,8 @@ function actualizarDatos() {
     Hora78l.innerHTML =                  '99.77%';
     
     //                         Porcentaje hora 8-9am
-    Hora89.setAttribute('style', 'width: 0%;'); 
-    Hora89l.innerHTML =                  '0%';
+    Hora89.setAttribute('style', 'width: 29.15%;'); 
+    Hora89l.innerHTML =                  '29.15%';
     
     //                         Porcentaje hora 9-10am
     Hora910.setAttribute('style', 'width: 0%;'); 
@@ -57,11 +57,11 @@ function actualizarDatos() {
     //***********Tiempo perdido y acumulado************
     
     //             6-7am   7-8am    8-9am   9-10am   10-11am   11-12pm   12-13pm    13-14pm         
-    TiempoPerdido=['23',      '0' ];
+    TiempoPerdido=['23',      '0' ,'43'];
     
     
     //             6-7am   7-8am    8-9am   9-10am   10-11am   11-12pm   12-13pm    13-14pm         
-    TiempoAcumulado=['23',    '23'];
+    TiempoAcumulado=['23',    '23','65'];
     
     
     
@@ -74,7 +74,7 @@ function actualizarDatos() {
     Observacion78.innerHTML =                'Ninguno'; 
     
     //                                   Observacion de 8-9 am
-    Observacion89.innerHTML =                'NA'; 
+    Observacion89.innerHTML =                'Final de producción'; 
     
     //                                   Observacion de 9-10 am
     Observacion910.innerHTML=                   'NA'; 
@@ -115,7 +115,7 @@ function actualizarDatos() {
     
     //*********************Marca si ya se termino la produccion del sabor********
     //********************Primer sabor**************************************** */
-    marcar1.checked = false; // Poner false, si no se ha termino, o true si ya termino
+    marcar1.checked = true; // Poner f, si no se ha termino, o true si ya termino
     
     //********************Segundo sabor**************************************** */
     marcar2.checked = false; // Poner false, si no se ha termino, o true si ya termino
