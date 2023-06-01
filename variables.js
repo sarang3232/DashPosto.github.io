@@ -15,7 +15,7 @@ function actualizarDatos() {
     Teorica= [  2500,    5000,7501,10001,12501,15501,17501,20002];
     
     //           6-7am   7-8am    8-9am   9-10am   10-11am   11-12pm   12-13pm    13-14pm
-    Real= [    18603,48533,57277];
+    Real= [    18603,48533,57277,0,0,76277,103474];
     
     
     //*********** EFICIENCIA HORA ***********************
@@ -41,12 +41,12 @@ function actualizarDatos() {
     Hora1011l.innerHTML =                  '0%';
     
     //                         Porcentaje hora 11-12pm
-    Hora1112.setAttribute('style', 'width: 0%;'); 
-    Hora1112l.innerHTML =                  '0%';
+    Hora1112.setAttribute('style', 'width: 63.3%;'); 
+    Hora1112l.innerHTML =                  '63.3%';
     
     //                         Porcentaje hora 12-13pm
-    Hora1213.setAttribute('style', 'width: 0%;'); 
-    Hora1213l.innerHTML =                  '0%';
+    Hora1213.setAttribute('style', 'width: 90.6%;'); 
+    Hora1213l.innerHTML =                  '90.6%';
     
     //                         Porcentaje hora 13-14am
     Hora1314.setAttribute('style', 'width: 0%;'); 
@@ -57,11 +57,11 @@ function actualizarDatos() {
     //***********Tiempo perdido y acumulado************
     
     //             6-7am   7-8am    8-9am   9-10am   10-11am   11-12pm   12-13pm    13-14pm         
-    TiempoPerdido=['23',      '0' ,'43'];
+    TiempoPerdido=['23',      '0' ,'43','60','60','22''6'];
     
     
     //             6-7am   7-8am    8-9am   9-10am   10-11am   11-12pm   12-13pm    13-14pm         
-    TiempoAcumulado=['23',    '23','65'];
+    TiempoAcumulado=['23',    '23','65','125','185','207','213'];
     
     
     
@@ -77,13 +77,13 @@ function actualizarDatos() {
     Observacion89.innerHTML =                'Final de producción'; 
     
     //                                   Observacion de 9-10 am
-    Observacion910.innerHTML=                   'NA'; 
+    Observacion910.innerHTML=                   'Cip2'; 
     
     //                                   Observacion de 10-11 am
-    Observacion1011.innerHTML =                'NA'; 
+    Observacion1011.innerHTML =                'Cip2'; 
     
     //                                   Observacion de 11-12 am
-    Observacion1112.innerHTML =                'NA'; 
+    Observacion1112.innerHTML =                'Cip2, inicio producción mora'; 
     
     //                                   Observacion de 12-13 pm
     Observacion1213.innerHTML =                'NA'; 
@@ -118,7 +118,7 @@ function actualizarDatos() {
     marcar1.checked = true; // Poner f, si no se ha termino, o true si ya termino
     
     //********************Segundo sabor**************************************** */
-    marcar2.checked = false; // Poner false, si no se ha termino, o true si ya termino
+    marcar2.checked = true; // Poner false, si no se ha termino, o true si ya termino
     
     //********************Tercer sabor**************************************** */
     marcar3.checked = false; // Poner false, si no se ha termino, o true si ya termino
