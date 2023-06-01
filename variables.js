@@ -71,7 +71,7 @@ function actualizarDatos() {
     Observacion67.innerHTML =                'Probando'; 
     
     //                                   Observacion de 7-8 am
-    Observacion78.innerHTML =                'Nuevo texto'; 
+    Observacion78.innerHTML =                'Probando1'; 
     
     //                                   Observacion de 8-9 am
     Observacion89.innerHTML =                'Nuevo texto'; 
