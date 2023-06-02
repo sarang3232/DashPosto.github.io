@@ -269,37 +269,52 @@
             Tarjetas
         ***********************************-->
 
+
 		<div class="row">
-		<div class="col-xl-6 col-xxl-8">
-			<div class="card">
-				<div class="card-header d-flex flex-wrap border-0 pb-0">
-					<div class="me-auto mb-sm-0 mb-3">
-						<h4 class="card-title mb-2">Medicion hora a hora</h4>
-						<span class="fs-12">Grafica de la produccion teorica vs real</span>
+			<div class="col-xl-6 col-xxl-8">
+				<div class="card">
+					<div class="card-header d-flex flex-wrap border-0 pb-0">
+						<div class="me-auto mb-sm-0 mb-3">
+							<h4 class="card-title mb-2">Medición hora a hora</h4>
+							<span class="fs-12">Gráfica de la producción teórica vs real</span>
+						</div>
+			
+						<div class="card-tabs mt-3 mt-sm-0">
+							<ul class="nav nav-tabs" role="tablist">
+								<li class="nav-item">
+									<a class="nav-link active" data-bs-toggle="tab" href="#monthly" role="tab">Turno A</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" data-bs-toggle="tab" href="#weekly" role="tab">Turno B</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" data-bs-toggle="tab" href="#today" role="tab">Turno C</a>
+								</li>
+							</ul>
+						</div>
 					</div>
-				
-					<div class="dropdown">
-						<a href="javascript:void(0);" class="btn-link" data-bs-toggle="dropdown" aria-expanded="true">
-							<svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z" stroke="#575757" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-								<path d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z" stroke="#575757" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-								<path d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z" stroke="#575757" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-							</svg>
-						</a>
-						
+					<div class="card-body pb-2">
+						<div class="d-sm-flex d-block">
+							<ul class="card-list d-flex mt-sm-0 mt-3">
+								<li class="me-3"><span class="bg-success circle"></span>Teórica</li>
+								<li><span class="bg-danger circle"></span>Real</li>
+							</ul>
+						</div>
+						<div class="tab-content">
+							<div class="tab-pane fade show active" id="monthly" role="tabpanel">
+								<div id="chartBar2" class="bar-chart"></div>
+							</div>
+							<div class="tab-pane fade" id="weekly" role="tabpanel">
+								<div id="chartBar3" class="bar-chart"></div>
+							</div>
+							<div class="tab-pane fade" id="today" role="tabpanel">
+								<div id="chartBar4" class="bar-chart"></div>
+							</div>
+						</div>
 					</div>
-				</div>
-				<div class="card-body pb-2">
-					<div class="d-sm-flex d-block">
-						<ul class="card-list d-flex mt-sm-0 mt-3">
-							<li class="me-3"><span class="bg-success circle"></span>Teorica</li>
-							<li><span class="bg-danger circle"></span>Real</li>
-						</ul>
-					</div>
-					<div id="chartBar2" class="bar-chart"></div>
 				</div>
 			</div>
-		</div>
+			
 		<div class="col-xl-3 col-xxl-4">
 			<div class="card">
 				<div class="card-header border-0 pb-0">
@@ -407,14 +422,40 @@
 	
 		<div class="col-xl-4 col-xxl-6">
 			<div class="card">
-				<div class="card-header">
-					<h4 class="card-title">Tiempo perdido y acumulado</h4>
+			  <div class="card-header">
+				<h4 class="card-title">Tiempo perdido-acumulado</h4>
+				<div class="card-tabs mt-3 mt-sm-0">
+				  <ul class="nav nav-tabs" role="tablist">
+					<li class="nav-item">
+					  <a class="nav-link active" data-bs-toggle="tab" href="#chart1" role="tab">Chart 1</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" data-bs-toggle="tab" href="#chart2" role="tab">Chart 2</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" data-bs-toggle="tab" href="#chart3" role="tab">Chart 3</a>
+					</li>
+				  </ul>
 				</div>
-				<div class="card-body">
+			  </div>
+			  <div class="card-body">
+				<div class="tab-content">
+				  <div class="tab-pane fade show active" id="chart1" role="tabpanel">
 					<canvas id="barChart_3"></canvas>
+				  </div>
+				  <div class="tab-pane fade" id="chart2" role="tabpanel">
+					<canvas id="barChart_2"></canvas>
+				  </div>
+				  <div class="tab-pane fade" id="chart3" role="tabpanel">
+					<canvas id="barChart_1"></canvas>
+				  </div>
 				</div>
+			  </div>
 			</div>
-		</div>
+		  </div>
+		  
+			
+		  
 		<div class="col-xl-4 col-xxl-6">
 			<div class="card">
 				<div class="card-header border-0 pb-0">
@@ -606,6 +647,123 @@
 														</div>
 													</td>
 													<td>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Jorge Mesias</a></h6>
+													</td>
+													<td>
+														<h6 class="fs-16 text-black font-w600 mb-0">Analista</h6>
+													</td>
+			
+												</tr>
+												<tr>
+													<td>
+														<div class="img_cont">
+															<img src="images/avatar/1.jpg" class="rounded-circle user_img" alt="" width="62" height="62">
+															<span class="online_icon offline"></span>
+														</div>
+													</td>
+													<td>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Eyder Agudo</a></h6>
+													</td>
+													<td>
+														<h6 class="fs-16 text-black font-w600 mb-0">Técnico Llenadora</h6>
+													</td>
+			
+												</tr>
+												<tr>
+													<td>
+														<div class="img_cont">
+															<img src="images/personal/brandon martinez.jpg" class="rounded-circle user_img" alt="" width="62" height="62">
+															<span class="online_icon offline"></span>
+														</div>
+													</td>
+													<td>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Brandon Martinez</a></h6>
+													</td>
+													<td>
+														<h6 class="fs-16 text-black font-w600 mb-0">Tecnico Etiquetadora</h6>
+													</td>
+			
+												</tr>
+
+												<tr>
+													<td>
+														<div class="img_cont">
+															<img src="images/personal/javier ortega.jpg" class="rounded-circle user_img" alt="" width="62" height="62">
+															<span class="online_icon offline"></span>
+														</div>
+													</td>
+													<td>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Javier Ortega</a></h6>
+													</td>
+													<td>
+														<h6 class="fs-16 text-black font-w600 mb-0">Tecnico Sopladora</h6>
+													</td>
+			
+												</tr>
+
+												<tr>
+													<td>
+														<div class="img_cont">
+															<img src="images/avatar/3.jpg" class="rounded-circle user_img" alt="" width="62" height="62">
+															<span class="online_icon offline"></span>
+														</div>
+													</td>
+													<td>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Jonathan Lopez</a></h6>
+													</td>
+													<td>
+														<h6 class="fs-16 text-black font-w600 mb-0">Tecnico</h6>
+													</td>
+			
+												</tr>
+
+												<tr>
+													<td>
+														<div class="img_cont">
+															<img src="images/avatar/3.jpg" class="rounded-circle user_img" alt="" width="62" height="62">
+															<span class="online_icon offline"></span>
+														</div>
+													</td>
+													<td>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Carlos Melina</a></h6>
+													</td>
+													<td>
+														<h6 class="fs-16 text-black font-w600 mb-0">Operario</h6>
+													</td>
+			
+												</tr>
+
+												<tr>
+													<td>
+														<div class="img_cont">
+															<img src="images/avatar/3.jpg" class="rounded-circle user_img" alt="" width="62" height="62">
+															<span class="online_icon offline"></span>
+														</div>
+													</td>
+													<td>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Yeferson Alvarez</a></h6>
+													</td>
+													<td>
+														<h6 class="fs-16 text-black font-w600 mb-0">Operario</h6>
+													</td>
+			
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="tab-pane" id="Today" role="tabpanel">
+									<div class="table-responsive">
+										<table class="table table-responsive-md card-table transactions-table">
+											<tbody>
+												<tr>
+													<td>
+														<div class="img_cont">
+															<img src="images/avatar/8.jpg" class="rounded-circle user_img" alt="" width="62" height="62">
+															<span class="online_icon offline"></span>
+														</div>
+													</td>
+													<td>
 														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Alfie Mason</a></h6>
 													</td>
 													<td>
@@ -651,22 +809,7 @@
 														</div>
 													</td>
 													<td>
-														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Bashid Samim</a></h6>
-													</td>
-													<td>
-														<h6 class="fs-16 text-black font-w600 mb-0">Tecnico 3</h6>
-													</td>
-			
-												</tr>
-												<tr>
-													<td>
-														<div class="img_cont">
-															<img src="images/avatar/8.jpg" class="rounded-circle user_img" alt="" width="62" height="62">
-															<span class="online_icon offline"></span>
-														</div>
-													</td>
-													<td>
-														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Ceorge Carso</a></h6>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Athan Jacoby</a></h6>
 													</td>
 													<td>
 														<h6 class="fs-16 text-black font-w600 mb-0">Tecnico 3</h6>
@@ -689,7 +832,7 @@
 														</div>
 													</td>
 													<td>
-														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Alfie Mason</a></h6>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Jorge Mesias</a></h6>
 													</td>
 													<td>
 														<h6 class="fs-16 text-black font-w600 mb-0">Analista</h6>
@@ -704,13 +847,45 @@
 														</div>
 													</td>
 													<td>
-														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Archie Parker</a></h6>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Eyder Agudo</a></h6>
 													</td>
 													<td>
-														<h6 class="fs-16 text-black font-w600 mb-0">Operario</h6>
+														<h6 class="fs-16 text-black font-w600 mb-0">Técnico Llenadora</h6>
 													</td>
 			
 												</tr>
+												<tr>
+													<td>
+														<div class="img_cont">
+															<img src="images/personal/brandon martinez.jpg" class="rounded-circle user_img" alt="" width="66" height="66">
+															<span class="online_icon offline"></span>
+														</div>
+													</td>
+													<td>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Brandon Martinez</a></h6>
+													</td>
+													<td>
+														<h6 class="fs-16 text-black font-w600 mb-0">Tecnico Etiquetadora</h6>
+													</td>
+			
+												</tr>
+
+												<tr>
+													<td>
+														<div class="img_cont">
+															<img src="images/personal/javier ortega.jpg" class="rounded-circle user_img" alt="" width="66" height="66">
+															<span class="online_icon offline"></span>
+														</div>
+													</td>
+													<td>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Javier Ortega</a></h6>
+													</td>
+													<td>
+														<h6 class="fs-16 text-black font-w600 mb-0">Tecnico Sopladora</h6>
+													</td>
+			
+												</tr>
+
 												<tr>
 													<td>
 														<div class="img_cont">
@@ -719,10 +894,42 @@
 														</div>
 													</td>
 													<td>
-														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Athan Jacoby</a></h6>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Jonathan Lopez</a></h6>
 													</td>
 													<td>
-														<h6 class="fs-16 text-black font-w600 mb-0">Tecnico 3</h6>
+														<h6 class="fs-16 text-black font-w600 mb-0">Tecnico</h6>
+													</td>
+			
+												</tr>
+
+												<tr>
+													<td>
+														<div class="img_cont">
+															<img src="images/avatar/3.jpg" class="rounded-circle user_img" alt="" width="62" height="62">
+															<span class="online_icon offline"></span>
+														</div>
+													</td>
+													<td>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Carlos Melina</a></h6>
+													</td>
+													<td>
+														<h6 class="fs-16 text-black font-w600 mb-0">Operario</h6>
+													</td>
+			
+												</tr>
+
+												<tr>
+													<td>
+														<div class="img_cont">
+															<img src="images/avatar/3.jpg" class="rounded-circle user_img" alt="" width="62" height="62">
+															<span class="online_icon offline"></span>
+														</div>
+													</td>
+													<td>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Yeferson Alvarez</a></h6>
+													</td>
+													<td>
+														<h6 class="fs-16 text-black font-w600 mb-0">Operario</h6>
 													</td>
 			
 												</tr>
@@ -810,6 +1017,10 @@
 				</div>
             </div>
         </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+		
         <!--**********************************
             Content body end
         ***********************************-->
