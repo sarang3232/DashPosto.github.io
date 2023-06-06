@@ -1142,32 +1142,27 @@
 
 
 
-<script src="https://apis.google.com/js/api.js"></script>
-  <script>
-    function actualizarValores() {
-      gapi.client.init({
-        apiKey: 'AIzaSyAQcH_d_FAEqX-1gHNwD1a-xCMMWHvS7YI',
-        clientId: '389513512219-juaubob9cf78lgf7upqpdamtdtib2q5e.apps.googleusercontent.com',
-        discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
-        scope: 'https://www.googleapis.com/auth/spreadsheets'
-      }).then(function() {
-        gapi.client.sheets.spreadsheets.values.batchGet({
-          spreadsheetId: '1_H9aPkpmgGJMYaiUeUWtPDHDVL2l4ONu',
-          ranges: ['698747821!V4', '698747821!W4', '698747821!X4'] // Rangos de celdas que deseas obtener
-        }).then(function(response) {
-          var values = response.result.valueRanges;
-          // Actualizar los elementos HTML con los valores obtenidos
-          document.getElementById('Eficienciadeproduccion').textContent = values[0].values[0][0];
-          document.getElementById('Rendimientojarabe').textContent = values[1].values[0][0];
-          document.getElementById('Desperfectos').textContent = values[2].values[0][0];
-        });
-      });
-    }
+<script>
 
-    window.onload = function() {
-      actualizarValores();
-    };
-  </script>
+
+// Función para actualizar el contenido de la página con los nuevos datos
+function actualizarContenido() {
+  // Actualiza los elementos HTML con los valores de las variables
+  document.getElementById('Eficienciadeproduccion').textContent = Eficienciadeproduccion;
+  document.getElementById('Rendimientojarabe').textContent = Rendimientojarabe;
+  document.getElementById('Desperfectos').textContent = Desperfectos;
+  document.getElementById('CumplimientoLimpieza').textContent = CumplimientoLimpieza;
+  // ...
+}
+
+// Llama a la función de actualización de datos desde datos.js
+actualizarDatos();
+
+// Llama a la función de actualización del contenido de la página
+actualizarContenido();
+</script>
+
+
 
 
 
