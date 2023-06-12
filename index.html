@@ -1,0 +1,2305 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="admin, dashboard">
+	<meta name="author" content="StivenQuintero">
+	<meta name="robots" content="index, follow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Dashboard postobon">
+	<meta property="og:title" content="Dashboard postobon">
+	<meta property="og:description" content="Dashboard postobon">
+	<meta property="og:image" content="/images/OIP.png">
+	<meta name="format-detection" content="telephone=no">
+		
+	<!-- PAGE TITLE HERE -->
+	<title>Dasboard Postobon</title>
+	
+	<!-- FAVICONS ICON -->
+	<link rel="shortcut icon" type="image/png" href="images/post.png">
+	<link href="vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+	<link href="vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
+	<link rel="stylesheet" href="vendor/nouislider/nouislider.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+	 <!-- Datatable -->
+	 <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+
+	<!-- Style css -->
+    <link href="css/style.css" rel="stylesheet">
+	
+</head>
+<body onload="mostrarMensaje()">
+
+    <!--*******************
+        Cargando
+    ********************-->
+    <div id="preloader">
+        <div class="waviy">
+		   <span style="--i:1">P</span>
+		   <span style="--i:2">o</span>
+		   <span style="--i:3">s</span>
+		   <span style="--i:4">t</span>
+		   <span style="--i:5">o</span>
+		   <span style="--i:6">b</span>
+		   <span style="--i:7">o</span>
+		   <span style="--i:8">n</span>
+		   <span style="--i:9">.</span>
+		   <span style="--i:10">.</span>
+		</div>
+    </div>
+    <!--*******************
+        Fin de cargando
+    ********************-->
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Logo esquina superior izquierda
+        ***********************************-->
+        <div class="nav-header">
+			<a href="index.html" class="brand-logo">
+				<div class="logo">
+					<img src="images\post.png" alt="Logo de Postobón" style="width: 140px; height: 120px;">
+				</div>
+			</a>
+			<div class="nav-control">
+				<div class="hamburger">
+					<span class="line"></span><span class="line"></span><span class="line"></span>
+				</div>
+			</div>
+		</div>
+
+		
+		  
+        <!--**********************************
+           Fin Logo esquina superior izquierda
+        ***********************************-->
+		
+	<!--**********************************
+            Header start
+        ***********************************-->
+		<div class="header">
+			<div class="header-content">
+			  <nav class="navbar navbar-expand">
+				<div class="collapse navbar-collapse justify-content-between">
+				  <div class="header-left">
+					<div class="dashboard_bar">
+					  Indicadores L8
+					</div>
+					<div id="mensaje-container">
+					  <div id="mensaje"></div>
+					</div>
+				  </div>
+				</div>
+			  </nav>
+			</div>
+		  </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+
+		<script>
+			function mostrarMensaje() {
+			  var fecha = new Date();
+			  var hora = fecha.getHours();
+		  
+			  // Verificar si es antes de las 6:00 am
+			  if (hora < 6) {
+				// Restar un día a la fecha actual
+				fecha.setDate(fecha.getDate() - 1);
+			  }
+		  
+			  var opciones = { year: 'numeric', month: '2-digit', day: '2-digit' };
+			  var mensaje = "Del día " + fecha.toLocaleDateString('es-ES', opciones);
+			  document.getElementById("mensaje").textContent = mensaje;
+			}
+		  </script>
+
+    <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="dlabnav collapsed">
+            <div class="dlabnav-scroll">
+				<ul class="metismenu" id="menu">
+					<li class="dropdown header-profile">
+					</li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+						<i class="flaticon-025-dashboard"></i>
+						<span class="nav-text">Lineas elite</span>
+					</a>
+					<ul aria-expanded="false">
+						<li><a href="index.html">Linea 8</a></li>
+						<li><a href="index-3.html">Linea 1</a></li>
+						<li><a href="index-2.html">Linea 10</a></li>
+					</ul>
+
+				</li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+						<i class="flaticon-050-info"></i>
+							<span class="nav-text">Recursos</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="index4.html">Gestion de area</a></li>
+							<li><a href="index5.html">Plan de accion</a></li>
+							<li><a href="index6.html">MTTR y MTBF</a></li>
+                        </ul>
+
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+						<i class="flaticon-041-graph"></i>
+						<span class="nav-text">Graficos</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="grafica_Eficiencia.html">L8</a></li>
+							<li><a href="grafica_Eficiencia-2.html">L1</a></li>
+							<li><a href="grafica_Eficiencia-3.html">L10</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-043-menu"></i>
+							<span class="nav-text">Matrices Polivalencia</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="Matrices-L8.html">L8</a></li>
+							<li><a href="Matrices-L1.html">L1</a></li>
+							<li><a href="Matrices-L10.html">L10</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-022-copy"></i>
+							<span class="nav-text">Estandares (POE`S)</span>
+						</a>
+                    </li>
+                </ul>
+				
+			</div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+				
+		<!--**********************************
+            Content body start
+        ***********************************-->
+		<!--**********************************
+            Tarjetas
+        ***********************************-->
+        <div class="content-body">
+            <!-- row -->
+			<div class="container-fluid">
+				<div class="row invoice-card-row">
+					<div class="col-xl-3 col-xxl-3 col-sm-6">
+						<div class="card bg-warning invoice-card my-card">
+						  <div class="card-body d-flex">
+							<div class="icon me-3">
+							  <svg width="33px" height="32px">
+								<path fill-rule="evenodd" fill="rgb(255, 255, 255)" d="M31.963,30.931 C31.818,31.160 31.609,31.342 31.363,31.455 C31.175,31.538 30.972,31.582 30.767,31.583 C30.429,31.583 30.102,31.463 29.845,31.243 L25.802,27.786 L21.758,31.243 C21.502,31.463 21.175,31.583 20.837,31.583 C20.498,31.583 20.172,31.463 19.915,31.243 L15.872,27.786 L11.829,31.243 C11.622,31.420 11.370,31.534 11.101,31.572 C10.832,31.609 10.558,31.569 10.311,31.455 C10.065,31.342 9.857,31.160 9.710,30.931 C9.565,30.703 9.488,30.437 9.488,30.167 L9.488,17.416 L2.395,17.416 C2.019,17.416 1.658,17.267 1.392,17.001 C1.126,16.736 0.976,16.375 0.976,16.000 L0.976,6.083 C0.976,4.580 1.574,3.139 2.639,2.076 C3.703,1.014 5.146,0.417 6.651,0.417 L26.511,0.417 C28.016,0.417 29.459,1.014 30.524,2.076 C31.588,3.139 32.186,4.580 32.186,6.083 L32.186,30.167 C32.186,30.437 32.109,30.703 31.963,30.931 ZM9.488,6.083 C9.488,5.332 9.189,4.611 8.657,4.080 C8.125,3.548 7.403,3.250 6.651,3.250 C5.898,3.250 5.177,3.548 4.645,4.080 C4.113,4.611 3.814,5.332 3.814,6.083 L3.814,14.583 L9.488,14.583 L9.488,6.083 ZM29.348,6.083 C29.348,5.332 29.050,4.611 28.517,4.080 C27.985,3.548 27.263,3.250 26.511,3.250 L11.559,3.250 C12.059,4.111 12.324,5.088 12.325,6.083 L12.325,27.092 L14.950,24.840 C15.207,24.620 15.534,24.500 15.872,24.500 C16.210,24.500 16.537,24.620 16.794,24.840 L20.837,28.296 L24.880,24.840 C25.137,24.620 25.463,24.500 25.802,24.500 C26.140,24.500 26.467,24.620 26.724,24.840 L29.348,27.092 L29.348,6.083 ZM25.092,20.250 L16.581,20.250 C16.205,20.250 15.844,20.101 15.578,19.835 C15.312,19.569 15.162,19.209 15.162,18.833 C15.162,18.457 15.312,18.097 15.578,17.831 C15.844,17.566 16.205,17.416 16.581,17.416 L25.092,17.416 C25.469,17.416 25.829,17.566 26.096,17.831 C26.362,18.097 26.511,18.457 26.511,18.833 C26.511,19.209 26.362,19.569 26.096,19.835 C25.829,20.101 25.469,20.250 25.092,20.250 ZM25.092,14.583 L16.581,14.583 C16.205,14.583 15.844,14.434 15.578,14.168 C15.312,13.903 15.162,13.542 15.162,13.167 C15.162,12.791 15.312,12.430 15.578,12.165 C15.844,11.899 16.205,11.750 16.581,11.750 L25.092,11.750 C25.469,11.750 25.829,11.899 26.096,12.165 C26.362,12.430 26.511,12.791 26.511,13.167 C26.511,13.542 26.362,13.903 26.096,14.168 C25.829,14.434 25.469,14.583 25.092,14.583 ZM25.092,8.916 L16.581,8.916 C16.205,8.916 15.844,8.767 15.578,8.501 C15.312,8.236 15.162,7.875 15.162,7.500 C15.162,7.124 15.312,6.764 15.578,6.498 C15.844,6.232 16.205,6.083 16.581,6.083 L25.092,6.083 C25.469,6.083 25.829,6.232 26.096,6.498 C26.362,6.764 26.511,7.124 26.511,7.500 C26.511,7.875 26.362,8.236 26.096,8.501 C25.829,8.767 25.469,8.916 25.092,8.916 Z"></path>
+							  </svg>
+							</div>
+							<div>
+								<h2 class="text-white invoice-num"> <span id="Eficienciadeproduccion"></span></h2>
+								<span class="text-white fs-18">Eficiencia de produccion</span>
+							</div>
+						  </div>
+						</div>
+					  </div>
+					  
+					<div class="col-xl-3 col-xxl-3 col-sm-6">
+						<div class="card bg-success invoice-card my-card">
+							<div class="card-body d-flex">
+								<div class="icon me-3">
+									<svg width="35px" height="34px">
+									<path fill-rule="evenodd" fill="rgb(255, 255, 255)" d="M32.482,9.730 C31.092,6.789 28.892,4.319 26.120,2.586 C22.265,0.183 17.698,-0.580 13.271,0.442 C8.843,1.458 5.074,4.140 2.668,7.990 C0.255,11.840 -0.509,16.394 0.514,20.822 C1.538,25.244 4.224,29.008 8.072,31.411 C10.785,33.104 13.896,34.000 17.080,34.000 L17.286,34.000 C20.456,33.960 23.541,33.044 26.213,31.358 C26.991,30.866 27.217,29.844 26.725,29.067 C26.234,28.291 25.210,28.065 24.432,28.556 C22.285,29.917 19.799,30.654 17.246,30.687 C14.627,30.720 12.067,29.997 9.834,28.609 C6.730,26.671 4.569,23.644 3.752,20.085 C2.934,16.527 3.546,12.863 5.486,9.763 C9.488,3.370 17.957,1.418 24.359,5.414 C26.592,6.808 28.360,8.793 29.477,11.157 C30.568,13.460 30.993,16.016 30.707,18.539 C30.607,19.448 31.259,20.271 32.177,20.371 C33.087,20.470 33.911,19.820 34.011,18.904 C34.363,15.764 33.832,12.591 32.482,9.730 L32.482,9.730 Z"></path>
+									<path fill-rule="evenodd" fill="rgb(255, 255, 255)" d="M22.593,11.237 L14.575,19.244 L11.604,16.277 C10.952,15.626 9.902,15.626 9.250,16.277 C8.599,16.927 8.599,17.976 9.250,18.627 L13.399,22.770 C13.725,23.095 14.150,23.254 14.575,23.254 C15.001,23.254 15.427,23.095 15.753,22.770 L24.940,13.588 C25.592,12.937 25.592,11.888 24.940,11.237 C24.289,10.593 23.238,10.593 22.593,11.237 L22.593,11.237 Z"></path>
+									</svg>
+									
+								</div>
+								<div>
+									<h2 class="text-white invoice-num"><span id="Rendimientojarabe"></span></h2>
+									<span class="text-white fs-18">Rendimiento Jarabe</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-xxl-3 col-sm-6">
+						<div class="card bg-info invoice-card my-card">
+							<div class="card-body d-flex">
+								<div class="icon me-3">
+									<svg width="35px" height="34px">
+									<path fill-rule="evenodd" fill="rgb(255, 255, 255)" d="M33.002,9.728 C31.612,6.787 29.411,4.316 26.638,2.583 C22.781,0.179 18.219,-0.584 13.784,0.438 C9.356,1.454 5.585,4.137 3.178,7.989 C0.764,11.840 -0.000,16.396 1.023,20.825 C2.048,25.247 4.734,29.013 8.584,31.417 C11.297,33.110 14.409,34.006 17.594,34.006 L17.800,34.006 C20.973,33.967 24.058,33.050 26.731,31.363 C27.509,30.872 27.735,29.849 27.243,29.072 C26.751,28.296 25.727,28.070 24.949,28.561 C22.801,29.922 20.314,30.660 17.761,30.693 C15.141,30.726 12.581,30.002 10.346,28.614 C7.241,26.675 5.080,23.647 4.262,20.088 C3.444,16.515 4.056,12.850 5.997,9.748 C10.001,3.353 18.473,1.401 24.876,5.399 C27.110,6.793 28.879,8.779 29.996,11.143 C31.087,13.447 31.513,16.004 31.227,18.527 C31.126,19.437 31.778,20.260 32.696,20.360 C33.607,20.459 34.432,19.809 34.531,18.892 C34.884,15.765 34.352,12.591 33.002,9.728 L33.002,9.728 Z"></path>
+									<path fill-rule="evenodd" fill="rgb(255, 255, 255)" d="M23.380,11.236 C22.728,10.585 21.678,10.585 21.026,11.236 L17.608,14.656 L14.190,11.243 C13.539,10.592 12.488,10.592 11.836,11.243 C11.184,11.893 11.184,12.942 11.836,13.593 L15.254,17.006 L11.836,20.420 C11.184,21.071 11.184,22.120 11.836,22.770 C12.162,23.096 12.588,23.255 13.014,23.255 C13.438,23.255 13.864,23.096 14.190,22.770 L17.608,19.357 L21.026,22.770 C21.352,23.096 21.777,23.255 22.203,23.255 C22.629,23.255 23.054,23.096 23.380,22.770 C24.031,22.120 24.031,21.071 23.380,20.420 L19.962,17.000 L23.380,13.587 C24.031,12.936 24.031,11.887 23.380,11.236 L23.380,11.236 Z"></path>
+									</svg>
+									
+								</div>
+								<div>
+									<h2 class="text-white invoice-num"><span id="Desperfectos"></span></h2>
+									<span class="text-white fs-18">Desperfectos</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-xxl-3 col-sm-6">
+						<div class="card bg-secondary invoice-card my-card">
+							<div class="card-body d-flex">
+								<div class="icon me-3">
+									<svg width="33px" height="32px">
+									<path fill-rule="evenodd" fill="rgb(255, 255, 255)" d="M31.963,30.931 C31.818,31.160 31.609,31.342 31.363,31.455 C31.175,31.538 30.972,31.582 30.767,31.583 C30.429,31.583 30.102,31.463 29.845,31.243 L25.802,27.786 L21.758,31.243 C21.502,31.463 21.175,31.583 20.837,31.583 C20.498,31.583 20.172,31.463 19.915,31.243 L15.872,27.786 L11.829,31.243 C11.622,31.420 11.370,31.534 11.101,31.572 C10.832,31.609 10.558,31.569 10.311,31.455 C10.065,31.342 9.857,31.160 9.710,30.931 C9.565,30.703 9.488,30.437 9.488,30.167 L9.488,17.416 L2.395,17.416 C2.019,17.416 1.658,17.267 1.392,17.001 C1.126,16.736 0.976,16.375 0.976,16.000 L0.976,6.083 C0.976,4.580 1.574,3.139 2.639,2.076 C3.703,1.014 5.146,0.417 6.651,0.417 L26.511,0.417 C28.016,0.417 29.459,1.014 30.524,2.076 C31.588,3.139 32.186,4.580 32.186,6.083 L32.186,30.167 C32.186,30.437 32.109,30.703 31.963,30.931 ZM9.488,6.083 C9.488,5.332 9.189,4.611 8.657,4.080 C8.125,3.548 7.403,3.250 6.651,3.250 C5.898,3.250 5.177,3.548 4.645,4.080 C4.113,4.611 3.814,5.332 3.814,6.083 L3.814,14.583 L9.488,14.583 L9.488,6.083 ZM29.348,6.083 C29.348,5.332 29.050,4.611 28.517,4.080 C27.985,3.548 27.263,3.250 26.511,3.250 L11.559,3.250 C12.059,4.111 12.324,5.088 12.325,6.083 L12.325,27.092 L14.950,24.840 C15.207,24.620 15.534,24.500 15.872,24.500 C16.210,24.500 16.537,24.620 16.794,24.840 L20.837,28.296 L24.880,24.840 C25.137,24.620 25.463,24.500 25.802,24.500 C26.140,24.500 26.467,24.620 26.724,24.840 L29.348,27.092 L29.348,6.083 ZM25.092,20.250 L16.581,20.250 C16.205,20.250 15.844,20.101 15.578,19.835 C15.312,19.569 15.162,19.209 15.162,18.833 C15.162,18.457 15.312,18.097 15.578,17.831 C15.844,17.566 16.205,17.416 16.581,17.416 L25.092,17.416 C25.469,17.416 25.829,17.566 26.096,17.831 C26.362,18.097 26.511,18.457 26.511,18.833 C26.511,19.209 26.362,19.569 26.096,19.835 C25.829,20.101 25.469,20.250 25.092,20.250 ZM25.092,14.583 L16.581,14.583 C16.205,14.583 15.844,14.434 15.578,14.168 C15.312,13.903 15.162,13.542 15.162,13.167 C15.162,12.791 15.312,12.430 15.578,12.165 C15.844,11.899 16.205,11.750 16.581,11.750 L25.092,11.750 C25.469,11.750 25.829,11.899 26.096,12.165 C26.362,12.430 26.511,12.791 26.511,13.167 C26.511,13.542 26.362,13.903 26.096,14.168 C25.829,14.434 25.469,14.583 25.092,14.583 ZM25.092,8.916 L16.581,8.916 C16.205,8.916 15.844,8.767 15.578,8.501 C15.312,8.236 15.162,7.875 15.162,7.500 C15.162,7.124 15.312,6.764 15.578,6.498 C15.844,6.232 16.205,6.083 16.581,6.083 L25.092,6.083 C25.469,6.083 25.829,6.232 26.096,6.498 C26.362,6.764 26.511,7.124 26.511,7.500 C26.511,7.875 26.362,8.236 26.096,8.501 C25.829,8.767 25.469,8.916 25.092,8.916 Z"></path>
+									</svg>
+								
+								</div>
+								<div>
+									<h2 class="text-white invoice-num"><span id="CumplimientoLimpieza"></span></h2>
+									<span class="text-white fs-18">Cumplimiento limpieza</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--**********************************
+            Tarjetas
+        ***********************************-->
+
+		<div class="row">
+			<div class="col-xl-6 col-xxl-8">
+				<div class="card">
+					<div class="card-header d-flex flex-wrap border-0 pb-0">
+						<div class="me-auto mb-sm-0 mb-3">
+							<h4 class="card-title mb-2">Medición hora a hora</h4>
+							<span class="fs-12">Gráfica de la producción teórica vs real</span>
+						</div>
+			
+						<div class="card-tabs mt-3 mt-sm-0">
+							<ul class="nav nav-tabs" role="tablist">
+								<li class="nav-item">
+									<a class="nav-link active" data-bs-toggle="tab" href="#monthly" role="tab">Turno A</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" data-bs-toggle="tab" href="#weekly" role="tab">Turno B</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" data-bs-toggle="tab" href="#today" role="tab">Turno C</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="card-body pb-2">
+						<div class="d-sm-flex d-block">
+							<ul class="card-list d-flex mt-sm-0 mt-3">
+								<li class="me-3"><span class="bg-success circle"></span>Teórica</li>
+								<li><span class="bg-danger circle"></span>Real</li>
+							</ul>
+						</div>
+						<div class="tab-content">
+							<div class="tab-pane fade show active" id="monthly" role="tabpanel">
+								<div id="chartBar2" class="bar-chart"></div>
+							</div>
+							<div class="tab-pane fade" id="weekly" role="tabpanel">
+								<div id="chartBar3" class="bar-chart"></div>
+							</div>
+							<div class="tab-pane fade" id="today" role="tabpanel">
+								<div id="chartBar4" class="bar-chart"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		<div class="col-xl-3 col-xxl-4">
+			<div class="card">
+				<div class="card-header border-0 pb-0">
+					<div>
+						<h4 id="cardTitle" class="card-title mb-2">%Eficiencia hora</h4>
+						<span id="reporteEficiencia" class="fs-12">Reporte de la eficiencia por hora</span>
+					</div>
+					<div class="dropdown">
+						<a href="javascript:void(0);" class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">
+							<svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z" stroke="#575757" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+								<path d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z" stroke="#575757" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+								<path d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z" stroke="#575757" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+							</svg>
+						</a>
+						<div class="dropdown-menu dropdown-menu-right">
+							<a class="dropdown-item" href="javascript:void(0);" id="acumulacion">Acumulacion</a>
+							<a class="dropdown-item" id="cardContent"></a>
+						</div>
+					</div>
+				</div>
+				<div class="card-body" id="cardContent">
+					<div class="progress default-progress">
+						<div id="progressBar1" class="progress-bar bg-gradient-1 progress-animated" style="width: 0%; height:20px;" role="progressbar">
+							<span class="sr-only">0% Complete</span>
+						</div>
+					</div>
+					<div class="d-flex align-items-end mt-2 pb-3 justify-content-between">
+						<span id="time1">6-7am</span>
+						<span id="percent1" class="fs-16 text-black pe-2" onclick="editData(1)">0%</span>
+						
+					</div>
+					<div class="progress default-progress mt-4">
+						<div id="progressBar2" class="progress-bar bg-gradient-2 progress-animated" style="width: 0%; height:20px;" role="progressbar">
+							<span class="sr-only">0% Complete</span>
+						</div>
+					</div>
+					<div class="d-flex align-items-end mt-2 pb-3 justify-content-between">
+						<span id="time2">7-8am</span>
+						<span id="percent2" class="fs-16 text-black pe-2" onclick="editData(2)">0%</span>
+					</div>
+					<!-- Resto de las barras de progreso y etiquetas -->
+					<div class="progress default-progress mt-4">
+						<div id="progressBar3" class="progress-bar bg-gradient-1 progress-animated" style="width: 0%; height:20px;" role="progressbar">
+							<span class="sr-only">0% Complete</span>
+						</div>
+					</div>
+					<div class="d-flex align-items-end mt-2 pb-3 justify-content-between">
+						<span id="time3">8-9am</span>
+						<span id="percent3" class="fs-16 text-black pe-2" onclick="editData(3)">0%</span>
+					</div>
+
+					<div class="progress default-progress mt-4">
+						<div id="progressBar4" class="progress-bar bg-gradient-2 progress-animated" style="width: 0%; height:20px;" role="progressbar">
+							<span class="sr-only">0% Complete</span>
+						</div>
+					</div>
+					<div class="d-flex align-items-end mt-2 pb-3 justify-content-between">
+						<span id="time4">9-10am</span>
+						<span id="percent4" class="fs-16 text-black pe-2" onclick="editData(4)">0%</span>
+					</div>
+
+					<div class="progress default-progress mt-4">
+						<div id="progressBar5" class="progress-bar bg-gradient-1 progress-animated" style="width: 0%; height:20px;" role="progressbar">
+							<span class="sr-only">0% Complete</span>
+						</div>
+					</div>
+					<div class="d-flex align-items-end mt-2 pb-3 justify-content-between">
+						<span id="time5">10-11am</span>
+						<span id="percent5" class="fs-16 text-black pe-2" onclick="editData(5)">0%</span>
+					</div>
+
+					<div class="progress default-progress mt-4">
+						<div id="progressBar6" class="progress-bar bg-gradient-2 progress-animated" style="width: 0%; height:20px;" role="progressbar">
+							<span class="sr-only">0% Complete</span>
+						</div>
+					</div>
+					<div class="d-flex align-items-end mt-2 pb-3 justify-content-between">
+						<span id="time6">11-12pm</span>
+						<span id="percent6" class="fs-16 text-black pe-2" onclick="editData(6)">0%</span>
+					</div>
+
+					<div class="progress default-progress mt-4">
+						<div id="progressBar7" class="progress-bar bg-gradient-1 progress-animated" style="width: 0%; height:20px;" role="progressbar">
+							<span class="sr-only">0% Complete</span>
+						</div>
+					</div>
+					<div class="d-flex align-items-end mt-2 pb-3 justify-content-between">
+						<span id="time7">12-13pm</span>
+						<span id="percent7" class="fs-16 text-black pe-2" onclick="editData(7)">0%</span>
+					</div>
+
+					<div class="progress default-progress mt-4">
+						<div id="progressBar8" class="progress-bar bg-gradient-2 progress-animated" style="width: 0%; height:20px;" role="progressbar">
+							<span class="sr-only">0% Complete</span>
+						</div>
+					</div>
+					<div class="d-flex align-items-end mt-2 pb-3 justify-content-between">
+						<span id="time8">13-14pm</span>
+						<span id="percent8" class="fs-16 text-black pe-2" onclick="editData(8)">0%</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="col-xl-5 col-xxl-6">
+			<div class="card">
+			  <div class="card-header">
+				<h4 class="card-title">Tiempo perdido</h4>
+				<div class="card-tabs mt-3 mt-sm-0">
+				  <ul class="nav nav-tabs" role="tablist">
+					<li class="nav-item active">
+					  <a class="nav-link" data-bs-toggle="tab" href="#chart4" role="tab">TrA</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" data-bs-toggle="tab" href="#chart2" role="tab">TrB</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" data-bs-toggle="tab" href="#chart3" role="tab">TrC</a>
+					</li>
+				  </ul>
+				</div>
+			  </div>
+			  <div class="card-body">
+				<div class="tab-content">
+					<div class="tab-pane fade show active" id="chart4" role="tabpanel">
+					<canvas id="barChart_5"></canvas>
+				  </div>
+				  <div class="tab-pane fade" id="chart2" role="tabpanel">
+					<canvas id="barChart_2"></canvas>
+				  </div>
+				  <div class="tab-pane fade" id="chart3" role="tabpanel">
+					<canvas id="barChart_1"></canvas>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  
+			
+		  
+		<div class="col-xl-4 col-xxl-6">
+			<div class="card">
+				<div class="card-header border-0 pb-0">
+					<h4 class="card-title">Observaciones</h4>
+				</div>
+				<div class="card-body">
+					<div id="dlab_W_TimeLine" class="widget-timeline dlab-scroll height300">
+						<ul class="timeline">
+							<li>
+								<div class="timeline-badge primary"></div>
+								<a class="timeline-panel text-muted" href="#">
+									<span>6-7am</span>
+									<h6 class="mb-0 my-label1">Ninguna</h6>
+								</a>
+							</li>
+							<li>
+								<div class="timeline-badge info">
+								</div>
+								<a class="timeline-panel text-muted" href="#">
+									<span>7-8am</span>
+									<h6 class="mb-0 my-label2">Ninguna</h6>
+									
+								</a>
+							</li>
+							<li>
+								<div class="timeline-badge danger">
+								</div>
+								<a class="timeline-panel text-muted" href="#">
+									<span>8-9am</span>
+									<h6 class="mb-0 my-label3">Ninguna</h6>
+								</a>
+							</li>
+							<li>
+								<div class="timeline-badge success">
+								</div>
+								<a class="timeline-panel text-muted" href="#">
+									<span>9-10am</span>
+									<h6 class="mb-0 my-label4">Ninguna</h6>
+								</a>
+							</li>
+							<li>
+								<div class="timeline-badge warning">
+								</div>
+								<a class="timeline-panel text-muted" href="#">
+									<span>10-11am</span>
+									<h6 class="mb-0 my-label5">Ninguna</h6>
+								</a>
+							</li>
+							<li>
+								<div class="timeline-badge dark">
+								</div>
+								<a class="timeline-panel text-muted" href="#">
+									<span>11-12pm</span>
+									<h6 class="mb-0 my-label6">Ninguna</h6>
+								</a>
+							</li>
+							<li>
+								<div class="timeline-badge danger">
+								</div>
+								<a class="timeline-panel text-muted" href="#">
+									<span>12-13pm</span>
+									<h6 class="mb-0 my-label7">Ninguna</h6>
+								</a>
+							</li>
+							<li>
+								<div class="timeline-badge warning">
+								</div>
+								<a class="timeline-panel text-muted" href="#">
+									<span>13-14pm</span>
+									<h6 class="mb-0 my-label8">Ninguna</h6>
+								</a>
+							</li>
+							<li>
+								<div class="timeline-badge danger">
+								</div>
+								<a class="timeline-panel text-muted" href="#">
+									<span>14-15pm</span>
+									<h6 class="mb-0 my-label9">Ninguna</h6>
+								</a>
+							</li>
+							<li>
+								<div class="timeline-badge success">
+								</div>
+								<a class="timeline-panel text-muted" href="#">
+									<span>15-16pm</span>
+									<h6 class="mb-0 my-label10">Ninguna</h6>
+								</a>
+							</li>
+							<li>
+								<div class="timeline-badge warning">
+								</div>
+								<a class="timeline-panel text-muted" href="#">
+									<span>16-17pm</span>
+									<h6 class="mb-0 my-label11">Ninguna</h6>
+								</a>
+							</li>
+							<li>
+								<div class="timeline-badge dark">
+								</div>
+								<a class="timeline-panel text-muted" href="#">
+									<span>17-18pm</span>
+									<h6 class="mb-0 my-label12">Ninguna</h6>
+								</a>
+							</li>
+							<li>
+								<div class="timeline-badge danger">
+								</div>
+								<a class="timeline-panel text-muted" href="#">
+									<span>18-19pm</span>
+									<h6 class="mb-0 my-label13">Ninguna</h6>
+								</a>
+							</li>
+							<li>
+								<div class="timeline-badge warning">
+								</div>
+								<a class="timeline-panel text-muted" href="#">
+									<span>19-20pm</span>
+									<h6 class="mb-0 my-label14">Ninguna</h6>
+								</a>
+							</li>
+							<li>
+								<div class="timeline-badge danger">
+								</div>
+								<a class="timeline-panel text-muted" href="#">
+									<span>20-21pm</span>
+									<h6 class="mb-0 my-label15">Ninguna</h6>
+								</a>
+							</li>
+							<li>
+								<div class="timeline-badge success">
+								</div>
+								<a class="timeline-panel text-muted" href="#">
+									<span>21-22pm</span>
+									<h6 class="mb-0 my-label16">Ninguna</h6>
+								</a>
+							</li>
+							<li>
+								<div class="timeline-badge warning">
+								</div>
+								<a class="timeline-panel text-muted" href="#">
+									<span>22-23pm</span>
+									<h6 class="mb-0 my-label17">Ninguna</h6>
+								</a>
+							</li>
+							<li>
+								<div class="timeline-badge danger">
+								</div>
+								<a class="timeline-panel text-muted" href="#">
+									<span>23-24am</span>
+									<h6 class="mb-0 my-label18">Ninguna</h6>
+								</a>
+							</li>
+							<li>
+								<div class="timeline-badge success">
+								</div>
+								<a class="timeline-panel text-muted" href="#">
+									<span>24-1am</span>
+									<h6 class="mb-0 my-label19">Ninguna</h6>
+								</a>
+							</li>
+							<li>
+								<div class="timeline-badge warning">
+								</div>
+								<a class="timeline-panel text-muted" href="#">
+									<span>1-2am</span>
+									<h6 class="mb-0 my-label20">Ninguna</h6>
+								</a>
+							</li>
+							<li>
+								<div class="timeline-badge dark">
+								</div>
+								<a class="timeline-panel text-muted" href="#">
+									<span>2-3am</span>
+									<h6 class="mb-0 my-label21">Ninguna</h6>
+								</a>
+							</li>
+							<li>
+								<div class="timeline-badge danger">
+								</div>
+								<a class="timeline-panel text-muted" href="#">
+									<span>3-4am</span>
+									<h6 class="mb-0 my-label22">Ninguna</h6>
+								</a>
+							</li>
+							<li>
+								<div class="timeline-badge warning">
+								</div>
+								<a class="timeline-panel text-muted" href="#">
+									<span>4-5am</span>
+									<h6 class="mb-0 my-label23">Ninguna</h6>
+								</a>
+							</li>
+							<li>
+								<div class="timeline-badge danger">
+								</div>
+								<a class="timeline-panel text-muted" href="#">
+									<span>5-6am</span>
+									<h6 class="mb-0 my-label24">Ninguna</h6>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		  <div class="col-xl-4 col-xxl-6 col-lg-6">
+    <div class="card border-0 pb-0">
+      <div class="card-header border-0 pb-0">
+        <h4 class="card-title">Estado</h4>
+      </div>
+      <div class="card-body"> 
+        <div id="dlab_W_Todo4" class="widget-media dlab-scroll height150">
+          <ul class="timeline">
+            <li>
+              <div class="timeline-panel">
+                <div class="form-check custom-checkbox checkbox-success check-lg me-3">
+                  <input type="checkbox" class="form-check-input" checked="" id="customCheckBox1" required="">
+                  <label class="form-check-label" for="customCheckBox1"></label>
+                </div>
+                <div class="media-body">
+                  <h5 class="mb-0 my-pro1"></h5>
+                  <small class="text-muted my-input1"></small>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="timeline-panel">
+                <div class="form-check custom-checkbox checkbox-warning check-lg me-3">
+                  <input type="checkbox" class="form-check-input" id="customCheckBox2" required="">
+                  <label class="form-check-label" for="customCheckBox2"></label>
+                </div>
+                <div class="media-body">
+                  <h5 class="mb-0 my-pro2"></h5>
+                  <small class="text-muted my-input2"></small>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="timeline-panel">
+                <div class="form-check custom-checkbox checkbox-primary check-lg me-3">
+                  <input type="checkbox" class="form-check-input" id="customCheckBox3" required="">
+                  <label class="form-check-label" for="customCheckBox3"></label>
+                </div>
+                <div class="media-body">
+                  <h5 class="mb-0 my-pro3"></h5>
+                  <small class="text-muted my-input3"></small>
+                </div>
+              </div>
+            </li>
+			<li>
+				<div class="timeline-panel">
+				  <div class="form-check custom-checkbox checkbox-success check-lg me-3">
+					<input type="checkbox" class="form-check-input"  id="customCheckBox4" required="">
+					<label class="form-check-label" for="customCheckBox4"></label>
+				  </div>
+				  <div class="media-body">
+					<h5 class="mb-0 my-pro4"></h5>
+					<small class="text-muted my-input4"></small>
+				  </div>
+				</div>
+			</li>
+			  <li>
+				<div class="timeline-panel">
+				  <div class="form-check custom-checkbox checkbox-warning check-lg me-3">
+					<input type="checkbox" class="form-check-input" id="customCheckBox5" required="">
+					<label class="form-check-label" for="customCheckBox5"></label>
+				  </div>
+				  <div class="media-body">
+					<h5 class="mb-0 my-pro5"></h5>
+					<small class="text-muted my-input5"></small>
+				  </div>
+				</div>
+			  </li>
+			  <li>
+				<div class="timeline-panel">
+				  <div class="form-check custom-checkbox checkbox-primary check-lg me-3">
+					<input type="checkbox" class="form-check-input" id="customCheckBox6" required="">
+					<label class="form-check-label" for="customCheckBox6"></label>
+				  </div>
+				  <div class="media-body">
+					<h5 class="mb-0 my-pro6"></h5>
+					<small class="text-muted my-input6"></small>
+				  </div>
+				</div>
+			  </li>
+			  <li>
+				<div class="timeline-panel">
+				  <div class="form-check custom-checkbox checkbox-success check-lg me-3">
+					<input type="checkbox" class="form-check-input"  id="customCheckBox7" required="">
+					<label class="form-check-label" for="customCheckBox7"></label>
+				  </div>
+				  <div class="media-body">
+					<h5 class="mb-0 my-pro7"></h5>
+					<small class="text-muted my-input7"></small>
+				  </div>
+				</div>
+			  </li>
+			  <li>
+				<div class="timeline-panel">
+				  <div class="form-check custom-checkbox checkbox-warning check-lg me-3">
+					<input type="checkbox" class="form-check-input" id="customCheckBox8" required="">
+					<label class="form-check-label" for="customCheckBox8"></label>
+				  </div>
+				  <div class="media-body">
+					<h5 class="mb-0 my-pro8"></h5>
+					<small class="text-muted my-input8"></small>
+				  </div>
+				</div>
+			  </li>
+			  <li>
+				<div class="timeline-panel">
+				  <div class="form-check custom-checkbox checkbox-primary check-lg me-3">
+					<input type="checkbox" class="form-check-input" id="customCheckBox9" required="">
+					<label class="form-check-label" for="customCheckBox9"></label>
+				  </div>
+				  <div class="media-body">
+					<h5 class="mb-0 my-pro9"></h5>
+					<small class="text-muted my-input9"></small>
+				  </div>
+				</div>
+			  </li>
+			  <li>
+				<div class="timeline-panel">
+				  <div class="form-check custom-checkbox checkbox-success check-lg me-3">
+					<input type="checkbox" class="form-check-input" id="customCheckBox10" required="">
+					<label class="form-check-label" for="customCheckBox10"></label>
+				  </div>
+				  <div class="media-body">
+					<h5 class="mb-0 my-pro10"></h5>
+					<small class="text-muted my-input10"></small>
+				  </div>
+				</div>
+			  </li>
+			  <li>
+				<div class="timeline-panel">
+				  <div class="form-check custom-checkbox checkbox-warning check-lg me-3">
+					<input type="checkbox" class="form-check-input" id="customCheckBox11" required="">
+					<label class="form-check-label" for="customCheckBox11"></label>
+				  </div>
+				  <div class="media-body">
+					<h5 class="mb-0 my-pro11"></h5>
+					<small class="text-muted my-input11"></small>
+				  </div>
+				</div>
+			  </li>
+			  <li>
+				<div class="timeline-panel">
+				  <div class="form-check custom-checkbox checkbox-primary check-lg me-3">
+					<input type="checkbox" class="form-check-input" id="customCheckBox12" required="">
+					<label class="form-check-label" for="customCheckBox12"></label>
+				  </div>
+				  <div class="media-body">
+					<h5 class="mb-0 my-pro12"></h5>
+					<small class="text-muted my-input12"></small>
+				  </div>
+				</div>
+			  </li>
+			  <li>
+				<div class="timeline-panel">
+				  <div class="form-check custom-checkbox checkbox-success check-lg me-3">
+					<input type="checkbox" class="form-check-input" id="customCheckBox13" required="">
+					<label class="form-check-label" for="customCheckBox13"></label>
+				  </div>
+				  <div class="media-body">
+					<h5 class="mb-0 my-pro13"></h5>
+					<small class="text-muted my-input13"></small>
+				  </div>
+				</div>
+			  </li>
+			  <li>
+				<div class="timeline-panel">
+				  <div class="form-check custom-checkbox checkbox-warning check-lg me-3">
+					<input type="checkbox" class="form-check-input" id="customCheckBox14" required="">
+					<label class="form-check-label" for="customCheckBox14"></label>
+				  </div>
+				  <div class="media-body">
+					<h5 class="mb-0 my-pro14"></h5>
+					<small class="text-muted my-input14"></small>
+				  </div>
+				</div>
+			  </li>
+			  <li>
+				<div class="timeline-panel">
+				  <div class="form-check custom-checkbox checkbox-primary check-lg me-3">
+					<input type="checkbox" class="form-check-input" id="customCheckBox15" required="">
+					<label class="form-check-label" for="customCheckBox15"></label>
+				  </div>
+				  <div class="media-body">
+					<h5 class="mb-0 my-pro15"></h5>
+					<small class="text-muted my-input15"></small>
+				  </div>
+				</div>
+			  </li>
+			  <li>
+				<div class="timeline-panel">
+				  <div class="form-check custom-checkbox checkbox-success check-lg me-3">
+					<input type="checkbox" class="form-check-input" id="customCheckBox16" required="">
+					<label class="form-check-label" for="customCheckBox16"></label>
+				  </div>
+				  <div class="media-body">
+					<h5 class="mb-0 my-pro16"></h5>
+					<small class="text-muted my-input16"></small>
+				  </div>
+				</div>
+			  </li>
+			  <li>
+				<div class="timeline-panel">
+				  <div class="form-check custom-checkbox checkbox-warning check-lg me-3">
+					<input type="checkbox" class="form-check-input" id="customCheckBox17" required="">
+					<label class="form-check-label" for="customCheckBox17"></label>
+				  </div>
+				  <div class="media-body">
+					<h5 class="mb-0 my-pro17"></h5>
+					<small class="text-muted my-input17"></small>
+				  </div>
+				</div>
+			  </li>
+			  <li>
+				<div class="timeline-panel">
+				  <div class="form-check custom-checkbox checkbox-primary check-lg me-3">
+					<input type="checkbox" class="form-check-input" id="customCheckBox18" required="">
+					<label class="form-check-label" for="customCheckBox18"></label>
+				  </div>
+				  <div class="media-body">
+					<h5 class="mb-0 my-pro18"></h5>
+					<small class="text-muted my-input18"></small>
+				  </div>
+				</div>
+			  </li>
+			  <li>
+				<div class="timeline-panel">
+				  <div class="form-check custom-checkbox checkbox-success check-lg me-3">
+					<input type="checkbox" class="form-check-input" id="customCheckBox19" required="">
+					<label class="form-check-label" for="customCheckBox19"></label>
+				  </div>
+				  <div class="media-body">
+					<h5 class="mb-0 my-pro19"></h5>
+					<small class="text-muted my-input19"></small>
+				  </div>
+				</div>
+			  </li>
+			  <li>
+				<div class="timeline-panel">
+				  <div class="form-check custom-checkbox checkbox-warning check-lg me-3">
+					<input type="checkbox" class="form-check-input" id="customCheckBox20" required="">
+					<label class="form-check-label" for="customCheckBox20"></label>
+				  </div>
+				  <div class="media-body">
+					<h5 class="mb-0 my-pro20"></h5>
+					<small class="text-muted my-input20"></small>
+				  </div>
+				</div>
+			  </li>
+			  <li>
+				<div class="timeline-panel">
+				  <div class="form-check custom-checkbox checkbox-primary check-lg me-3">
+					<input type="checkbox" class="form-check-input" id="customCheckBox21" required="">
+					<label class="form-check-label" for="customCheckBox21"></label>
+				  </div>
+				  <div class="media-body">
+					<h5 class="mb-0 my-pro21"></h5>
+					<small class="text-muted my-input21"></small>
+				  </div>
+				</div>
+			  </li>
+			  <li>
+				<div class="timeline-panel">
+				  <div class="form-check custom-checkbox checkbox-success check-lg me-3">
+					<input type="checkbox" class="form-check-input" id="customCheckBox22" required="">
+					<label class="form-check-label" for="customCheckBox22"></label>
+				  </div>
+				  <div class="media-body">
+					<h5 class="mb-0 my-pro22"></h5>
+					<small class="text-muted my-input22"></small>
+				  </div>
+				</div>
+			  </li>
+			  <li>
+				<div class="timeline-panel">
+				  <div class="form-check custom-checkbox checkbox-warning check-lg me-3">
+					<input type="checkbox" class="form-check-input" id="customCheckBox23" required="">
+					<label class="form-check-label" for="customCheckBox23"></label>
+				  </div>
+				  <div class="media-body">
+					<h5 class="mb-0 my-pro23"></h5>
+					<small class="text-muted my-input23"></small>
+				  </div>
+				</div>
+			  </li>
+			  <li>
+				<div class="timeline-panel">
+				  <div class="form-check custom-checkbox checkbox-primary check-lg me-3">
+					<input type="checkbox" class="form-check-input" id="customCheckBox24" required="">
+					<label class="form-check-label" for="customCheckBox24"></label>
+				  </div>
+				  <div class="media-body">
+					<h5 class="mb-0 my-pro24"></h5>
+					<small class="text-muted my-input24"></small>
+				  </div>
+				</div>
+			  </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+		<div class="col-xl-6">
+			<div class="card">
+				<div class="card-body p-4">
+				<h4 class="card-intro-title">Formatos</h4>
+					<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+						<div class="carousel-indicators">
+							<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+							<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+							<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+						</div>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img class="d-block w-100" src="images/for.PNG" alt="First slide">
+							</div>
+							<div class="carousel-item">
+								<img class="d-block w-100" src="images/form1.PNG" alt="Second slide">
+							</div>
+						</div>
+						<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						  </button>
+						  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						  </button>
+					</div>
+				</div>
+			</div>
+		</div>
+					<div class="col-xl-3 col-xxl-6">
+						<div class="card">
+							<div class="card-header d-block d-sm-flex border-0">
+								<div class="me-3">
+									<h4 class="card-title mb-2">Equipo Ranger</h4>
+									<span class="fs-12">Equipo autosuficiente de linea</span>
+								</div>
+								<div class="card-tabs mt-3 mt-sm-0">
+									<ul class="nav nav-tabs" role="tablist">
+										<li class="nav-item">
+											<a class="nav-link active" data-bs-toggle="tab" href="#Weekly" role="tab">Turno A</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" data-bs-toggle="tab" href="#Monthly" role="tab">Turno B</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" data-bs-toggle="tab" href="#Today" role="tab">Turno C</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="card-body tab-content p-0">
+								<div class="tab-pane active show fade" id="Weekly" role="tabpanel">
+									<div class="table-responsive">
+										<table class="table table-responsive-md card-table transactions-table">
+											<tbody>
+												<tr>
+													<td>
+														<div class="img_cont">
+															<img src="images/personal/Jorge Analista.jpeg" class="rounded-circle user_img" alt="" width="62" height="62">
+															<span class="online_icon offline"></span>
+														</div>
+													</td>
+													<td>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Jorge Mesias</a></h6>
+													</td>
+													<td>
+														<h6 class="fs-16 text-black font-w600 mb-0">Analista</h6>
+													</td>
+			
+												</tr>
+												<tr>
+													<td>
+														<div class="img_cont">
+															<img src="images/avatar/1.jpg" class="rounded-circle user_img" alt="" width="62" height="62">
+															<span class="online_icon offline"></span>
+														</div>
+													</td>
+													<td>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Eyder Agudo</a></h6>
+													</td>
+													<td>
+														<h6 class="fs-16 text-black font-w600 mb-0">Técnico Llenadora</h6>
+													</td>
+			
+												</tr>
+												<tr>
+													<td>
+														<div class="img_cont">
+															<img src="images/personal/brandon martinez.jpg" class="rounded-circle user_img" alt="" width="62" height="62">
+															<span class="online_icon offline"></span>
+														</div>
+													</td>
+													<td>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Brandon Martinez</a></h6>
+													</td>
+													<td>
+														<h6 class="fs-16 text-black font-w600 mb-0">Tecnico Etiquetadora</h6>
+													</td>
+			
+												</tr>
+
+												<tr>
+													<td>
+														<div class="img_cont">
+															<img src="images/personal/javier ortega.jpg" class="rounded-circle user_img" alt="" width="62" height="62">
+															<span class="online_icon offline"></span>
+														</div>
+													</td>
+													<td>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Javier Ortega</a></h6>
+													</td>
+													<td>
+														<h6 class="fs-16 text-black font-w600 mb-0">Tecnico Sopladora</h6>
+													</td>
+			
+												</tr>
+
+												<tr>
+													<td>
+														<div class="img_cont">
+															<img src="images/avatar/3.jpg" class="rounded-circle user_img" alt="" width="62" height="62">
+															<span class="online_icon offline"></span>
+														</div>
+													</td>
+													<td>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Jonathan Lopez</a></h6>
+													</td>
+													<td>
+														<h6 class="fs-16 text-black font-w600 mb-0">Tecnico</h6>
+													</td>
+			
+												</tr>
+
+												<tr>
+													<td>
+														<div class="img_cont">
+															<img src="images/personal/Carlos Medina Operario I.jpeg" class="rounded-circle user_img" alt="" width="62" height="62">
+															<span class="online_icon offline"></span>
+														</div>
+													</td>
+													<td>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Carlos Melina</a></h6>
+													</td>
+													<td>
+														<h6 class="fs-16 text-black font-w600 mb-0">Operario</h6>
+													</td>
+			
+												</tr>
+
+												<tr>
+													<td>
+														<div class="img_cont">
+															<img src="images/avatar/3.jpg" class="rounded-circle user_img" alt="" width="62" height="62">
+															<span class="online_icon offline"></span>
+														</div>
+													</td>
+													<td>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Yeferson Alvarez</a></h6>
+													</td>
+													<td>
+														<h6 class="fs-16 text-black font-w600 mb-0">Operario</h6>
+													</td>
+			
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="tab-pane" id="Today" role="tabpanel">
+									<div class="table-responsive">
+										<table class="table table-responsive-md card-table transactions-table">
+											<tbody>
+												<tr>
+													<td>
+														<div class="img_cont">
+															<img src="images/avatar/8.jpg" class="rounded-circle user_img" alt="" width="62" height="62">
+															<span class="online_icon offline"></span>
+														</div>
+													</td>
+													<td>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Alfie Mason</a></h6>
+													</td>
+													<td>
+														<h6 class="fs-16 text-black font-w600 mb-0">Analista</h6>
+													</td>
+			
+												</tr>
+												<tr>
+													<td>
+														<div class="img_cont">
+															<img src="images/avatar/1.jpg" class="rounded-circle user_img" alt="" width="62" height="62">
+															<span class="online_icon offline"></span>
+														</div>
+													</td>
+													<td>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Archie Parker</a></h6>
+													</td>
+													<td>
+														<h6 class="fs-16 text-black font-w600 mb-0">Operario</h6>
+													</td>
+			
+												</tr>
+												<tr>
+													<td>
+														<div class="img_cont">
+															<img src="images/avatar/3.jpg" class="rounded-circle user_img" alt="" width="62" height="62">
+															<span class="online_icon offline"></span>
+														</div>
+													</td>
+													<td>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Athan Jacoby</a></h6>
+													</td>
+													<td>
+														<h6 class="fs-16 text-black font-w600 mb-0">Tecnico 3</h6>
+													</td>
+			
+												</tr>
+												<tr>
+													<td>
+														<div class="img_cont">
+															<img src="images/avatar/5.jpg" class="rounded-circle user_img" alt="" width="62" height="62">
+															<span class="online_icon offline"></span>
+														</div>
+													</td>
+													<td>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Athan Jacoby</a></h6>
+													</td>
+													<td>
+														<h6 class="fs-16 text-black font-w600 mb-0">Tecnico 3</h6>
+													</td>
+			
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="tab-pane" id="Monthly" role="tabpanel">
+									<div class="table-responsive">
+										<table class="table table-responsive-md card-table transactions-table">
+											<tbody>
+												<tr>
+													<td>
+														<div class="img_cont">
+															<img src="images/avatar/8.jpg" class="rounded-circle user_img" alt="" width="62" height="62">
+															<span class="online_icon offline"></span>
+														</div>
+													</td>
+													<td>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Alfie Mason</a></h6>
+													</td>
+													<td>
+														<h6 class="fs-16 text-black font-w600 mb-0">Analista</h6>
+													</td>
+			
+												</tr>
+												<tr>
+													<td>
+														<div class="img_cont">
+															<img src="images/avatar/1.jpg" class="rounded-circle user_img" alt="" width="62" height="62">
+															<span class="online_icon offline"></span>
+														</div>
+													</td>
+													<td>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Archie Parker</a></h6>
+													</td>
+													<td>
+														<h6 class="fs-16 text-black font-w600 mb-0">Operario</h6>
+													</td>
+			
+												</tr>
+												<tr>
+													<td>
+														<div class="img_cont">
+															<img src="images/avatar/3.jpg" class="rounded-circle user_img" alt="" width="62" height="62">
+															<span class="online_icon offline"></span>
+														</div>
+													</td>
+													<td>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Athan Jacoby</a></h6>
+													</td>
+													<td>
+														<h6 class="fs-16 text-black font-w600 mb-0">Tecnico 3</h6>
+													</td>
+			
+												</tr>
+												<tr>
+													<td>
+														<div class="img_cont">
+															<img src="images/avatar/5.jpg" class="rounded-circle user_img" alt="" width="62" height="62">
+															<span class="online_icon offline"></span>
+														</div>
+													</td>
+													<td>
+														<h6 class="fs-16 font-w600 mb-0"><a href="javascript:void(0);" class="text-black">Athan Jacoby</a></h6>
+													</td>
+													<td>
+														<h6 class="fs-16 text-black font-w600 mb-0">Tecnico 3</h6>
+													</td>
+			
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+
+					
+
+
+
+					
+				</div>
+            </div>
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+		
+        <!--**********************************
+            Content body end
+        ***********************************-->
+		
+		
+		
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+		
+            <div class="copyright">
+                <p>Copyright © Designed &amp; Developed by StivenQ</a> 2023</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+		
+	</div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+     <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="vendor/global/global.min.js"></script>
+	<script src="vendor/chart.js/Chart.bundle.min.js"></script>
+	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+	
+	<!-- Apex Chart -->
+	<script src="vendor/apexchart/apexchart.js"></script>
+	<script src="vendor/nouislider/nouislider.min.js"></script>
+	<script src="vendor/wnumb/wNumb.js"></script>
+
+	  <!-- Datatable -->
+	  <script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
+	  <script src="js/plugins-init/datatables.init.js"></script>
+	
+	<!-- Dashboard 1 -->
+	<script src="js/dashboard/dashboard-1.js"></script>
+
+	 <!-- Chart ChartJS plugin files -->
+	 <script src="vendor/chart.js/Chart.bundle.min.js"></script>
+	 <script src="js/plugins-init/chartjs-init.js"></script>
+
+    <script src="js/custom.min.js"></script>
+	<script src="js/dlabnav-init.js"></script>
+	<script src="js/demo.js"></script>
+	<script src="formulario.js"></script>
+	<script src="variables.js"></script>
+	<script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+
+	<script>
+		// Variables de configuración
+		var scrollAmount = 90; // Cantidad de desplazamiento en píxeles
+		var scrollDelay = 1000; // Retraso en milisegundos entre cada desplazamiento
+		var delayAtTop = 3000; // Retraso en milisegundos en la parte superior de la página
+		var inactivityDelay = 120000; // Tiempo en milisegundos de inactividad para activar el scroll automático
+	
+		var timeout; // Variable para almacenar el temporizador
+		var lastMousePosition; // Variable para almacenar la última posición del mouse
+	
+		// Función para hacer scroll automáticamente en la página
+		function autoScrollPage() {
+		  var currentPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+		  var maxScroll = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight);
+	
+		  // Verifica si ha llegado al final de la página
+		  if (currentPosition + window.innerHeight >= maxScroll) {
+			// Vuelve al principio de la página con un retraso
+			setTimeout(function() {
+			  window.scrollTo(0, 0);
+			  // Programa el siguiente desplazamiento después del retraso en la parte superior
+			  timeout = setTimeout(autoScrollPage, scrollDelay);
+			}, delayAtTop);
+		  } else {
+			// Realiza el desplazamiento hacia abajo
+			window.scrollBy(0, scrollAmount);
+			// Programa el siguiente desplazamiento
+			timeout = setTimeout(autoScrollPage, scrollDelay);
+		  }
+		}
+	
+		// Función para reiniciar el temporizador de inactividad del mouse
+		function resetInactivityTimer() {
+		  clearTimeout(timeout);
+		  timeout = setTimeout(autoScrollPage, inactivityDelay);
+		}
+	
+		// Evento de movimiento del mouse
+		document.addEventListener('mousemove', function(event) {
+		  resetInactivityTimer();
+		  lastMousePosition = {
+			x: event.pageX,
+			y: event.pageY
+		  };
+		});
+	
+		// Evento de desplazamiento de la página
+		window.addEventListener('scroll', function() {
+		  var currentPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+		  var maxScroll = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight);
+	
+		  // Verifica si ha llegado al final de la página
+		  if (currentPosition + window.innerHeight >= maxScroll) {
+			// Vuelve al principio de la página con un retraso
+			setTimeout(function() {
+			  window.scrollTo(0, 0);
+			  // Programa el siguiente desplazamiento después del retraso en la parte superior
+			  timeout = setTimeout(autoScrollPage, scrollDelay);
+			}, delayAtTop);
+		  }
+		});
+	
+		// Inicia el temporizador de inactividad
+		timeout = setTimeout(autoScrollPage, inactivityDelay);
+	  </script>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+	  // Activa el primer tab al cargar la página
+	  var firstTab = document.querySelector(".nav-tabs .nav-link");
+	  var firstTabId = firstTab.getAttribute("href");
+	  firstTab.classList.add("show");
+	  document.querySelector(firstTabId).classList.add("active");
+	});
+  </script>
+
+
+<script>
+	var Teorica= [0, 0, 0, 0, 0, 0,0,0];
+	var Real = [0, 0, 0, 0, 0, 0,0,0];
+	var Teorica1= [0, 0, 0, 0, 0, 0,0,0];
+	var Real1 = [0, 0, 0, 0, 0, 0,0,0];
+	var Teorica2= [0, 0, 0, 0, 0, 0,0,0];
+	var Real2 = [0, 0, 0, 0, 0, 0,0,0];
+	var PHora67= document.getElementById('progressBar1');
+	var PHora67l = document.getElementById('percent1');
+	var PHora78= document.getElementById('progressBar2');
+	var PHora78l = document.getElementById('percent2'); 
+	var PHora89= document.getElementById('progressBar3');
+	var PHora89l = document.getElementById('percent3'); 
+	var PHora910= document.getElementById('progressBar4');
+	var PHora910l = document.getElementById('percent4'); 
+	var PHora1011= document.getElementById('progressBar5');
+	var PHora1011l = document.getElementById('percent5'); 
+	var PHora1112= document.getElementById('progressBar6');
+	var PHora1112l = document.getElementById('percent6'); 
+	var PHora1213= document.getElementById('progressBar7');
+	var PHora1213l = document.getElementById('percent7'); 
+	var PHora1314= document.getElementById('progressBar8');
+	var PHora1314l = document.getElementById('percent8');
+	var TiempoPerdido=[0,0,100,2,0,3,1,0];
+	var TiempoAcumulado= [0,0,10,0,1,0,3,0];
+	var TiempoPerdido1=[0,0,0,0,0,0,0,0];
+	var TiempoAcumulado1= [0,0,0,0,0,0,0,0];
+	var TiempoPerdido2=[0,0,0,0,0,0,0,0];
+	var TiempoAcumulado2= [0,0,0,0,0,0,0,0];
+	
+   
+	
+	var Programacion67 = document.querySelector('.mb-0.my-pro1');
+	var Programacion78 = document.querySelector('.mb-0.my-pro2');
+	var Programacion89 = document.querySelector('.mb-0.my-pro3');
+	var Programacion910 = document.querySelector('.mb-0.my-pro4');
+	var Programacion1011 = document.querySelector('.mb-0.my-pro5');
+	var Programacion1112 = document.querySelector('.mb-0.my-pro6');
+	var Programacion1213 = document.querySelector('.mb-0.my-pro7');
+	var Programacion1314 = document.querySelector('.mb-0.my-pro8');
+	var Programacion1415 = document.querySelector('.mb-0.my-pro9');
+	var Programacion1516 = document.querySelector('.mb-0.my-pro10');
+	var Programacion1617 = document.querySelector('.mb-0.my-pro11');
+	var Programacion1718 = document.querySelector('.mb-0.my-pro12');
+	var Programacion1819 = document.querySelector('.mb-0.my-pro13');
+	var Programacion1920 = document.querySelector('.mb-0.my-pro14');
+	var Programacion2021 = document.querySelector('.mb-0.my-pro15');
+	var Programacion2122 = document.querySelector('.mb-0.my-pro16');
+	var Programacion2223 = document.querySelector('.mb-0.my-pro17');
+	var Programacion2324 = document.querySelector('.mb-0.my-pro18');
+	var Programacion241 = document.querySelector('.mb-0.my-pro19');
+	var Programacion12 = document.querySelector('.mb-0.my-pro20');
+	var Programacion23 = document.querySelector('.mb-0.my-pro21');
+	var Programacion34 = document.querySelector('.mb-0.my-pro22');
+	var Programacion45 = document.querySelector('.mb-0.my-pro23');
+	var Programacion56 = document.querySelector('.mb-0.my-pro24');
+
+	var caja67 = document.querySelector('.text-muted.my-input1');
+	var caja78 = document.querySelector('.text-muted.my-input2');
+	var caja89 = document.querySelector('.text-muted.my-input3');
+	var caja910 = document.querySelector('.text-muted.my-input4');
+	var caja1011 = document.querySelector('.text-muted.my-input5');
+	var caja1112 = document.querySelector('.text-muted.my-input6');
+	var caja1213 = document.querySelector('.text-muted.my-input7');
+	var caja1314 = document.querySelector('.text-muted.my-input8');
+	var caja1415 = document.querySelector('.text-muted.my-input9');
+	var caja1516 = document.querySelector('.text-muted.my-input10');
+	var caja1617 = document.querySelector('.text-muted.my-input11');
+	var caja1718 = document.querySelector('.text-muted.my-input12');
+	var caja1819 = document.querySelector('.text-muted.my-input13');
+	var caja1920 = document.querySelector('.text-muted.my-input14');
+	var caja2021 = document.querySelector('.text-muted.my-input15');
+	var caja2122 = document.querySelector('.text-muted.my-input16');
+	var caja2223 = document.querySelector('.text-muted.my-input17');
+	var caja2324 = document.querySelector('.text-muted.my-input18');
+	var caja241 = document.querySelector('.text-muted.my-input19');
+	var caja12 = document.querySelector('.text-muted.my-input20');
+	var caja23 = document.querySelector('.text-muted.my-input21');
+	var caja34 = document.querySelector('.text-muted.my-input22');
+	var caja45 = document.querySelector('.text-muted.my-input23');
+	var caja56 = document.querySelector('.text-muted.my-input24');
+	
+	var updateTeoricaValues = function() {
+  // Obtener la fecha y hora actual
+  var fecha_actual = new Date();
+  var dia = fecha_actual.getDate().toString().padStart(2, '0');
+  var mes = (fecha_actual.getMonth() + 1).toString().padStart(2, '0'); // Se suma 1 ya que los meses en JavaScript comienzan en 0 (enero = 0)
+  var anio = fecha_actual.getFullYear();
+  var hora = fecha_actual.getHours();
+
+  // Verificar si es después de las 6:00 am
+if (hora < 6) {
+  // Restar un día a la fecha actual
+  fecha_actual.setDate(fecha_actual.getDate() - 1);
+  dia = fecha_actual.getDate().toString().padStart(2, '0');
+  mes = (fecha_actual.getMonth() + 1).toString().padStart(2, '0');
+  anio = fecha_actual.getFullYear();
+}
+
+// Construir la ruta del archivo Excel según la fecha actual
+var ruta_archivo = 'Datos/'+ dia + '.' + mes + '.' + anio + '.xlsm';
+
+
+    // Cargar el archivo Excel
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', ruta_archivo, true);
+    xhr.responseType = 'arraybuffer';
+
+    xhr.onload = function(e) {
+        var arraybuffer = xhr.response;
+
+        // Convertir el archivo Excel a un objeto de trabajo de SheetJS
+        var workbook = XLSX.read(arraybuffer, { type: 'array' });
+
+       // Obtener la hoja de cálculo deseada
+		var sheetNames = ["300 ML", "1500 ml ", "500 mL"];
+		var worksheets = sheetNames.map(function(sheetName) {
+  			return workbook.Sheets[sheetName];
+		});
+
+		// Definir una función de verificación para las celdas
+		var getCellValue = function(cell) {
+  			return cell && cell.v ? cell.v :'';
+			};
+
+        // Inicializar las variables de sumatoria
+    var sumaEficiencia = "";
+	var rendimientoJarabe="";
+	var Desperfectos="";
+	var Cumplimiento ="";
+	var Sobservacion67="";
+	var Sobservacion78="";
+	var Sobservacion89="";
+	var Sobservacion910="";
+	var Sobservacion1011="";
+	var Sobservacion1112="";
+	var Sobservacion1213="";
+	var Sobservacion1314="";
+	var Sobservacion1415="";
+	var Sobservacion1516="";
+	var Sobservacion1617="";
+	var Sobservacion1718="";
+	var Sobservacion1819="";
+	var Sobservacion1920="";
+	var Sobservacion2021="";
+	var Sobservacion2122="";
+	var Sobservacion2223="";
+	var Sobservacion2324="";
+	var Sobservacion241="";
+	var Sobservacion12="";
+	var Sobservacion23="";
+	var Sobservacion34="";
+	var Sobservacion45="";
+	var Sobservacion56="";
+	var hora67=2500;
+	var hora78=5000;
+	var hora89=7501;
+	var hora910=10001;
+	var hora1011=12501;
+	var hora1112=15001;
+	var hora1213=17501;
+	var hora1314=20002;
+	var hora1415=22502;
+	var hora1516=25002;
+	var hora1617=27502;
+	var hora1718=30002;
+	var hora1819=32503;
+	var hora1920=35003;
+	var hora2021=37503;
+	var hora2122=40003;
+	var hora2223=42503;
+	var hora2324=45004;
+	var hora241=47504;
+	var hora12=50004;
+	var hora23=52504;
+	var hora34=55004;
+	var hora45=57505;
+	var hora56=60005;
+	var Sprogramacion67="";
+	var Sprogramacion78="";
+	var Sprogramacion89="";
+	var Sprogramacion910="";
+	var Sprogramacion1011="";
+	var Sprogramacion1112="";
+	var Sprogramacion1213="";
+	var Sprogramacion1314="";
+	var Sprogramacion1415="";
+	var Sprogramacion1516="";
+	var Sprogramacion1617="";
+	var Sprogramacion1718="";
+	var Sprogramacion1819="";
+	var Sprogramacion1920="";
+	var Sprogramacion2021="";
+	var Sprogramacion2122="";
+	var Sprogramacion2223="";
+	var Sprogramacion2324="";
+	var Sprogramacion241="";
+	var Sprogramacion12="";
+	var Sprogramacion23="";
+	var Sprogramacion34="";
+	var Sprogramacion45="";
+	var Sprogramacion56="";
+	var caja671="";
+	var caja781="";
+	var caja891="";
+	var caja9101="";
+	var caja10111="";
+	var caja11121="";
+	var caja12131="";
+	var caja13141="";
+	var caja14151="";
+	var caja15161="";
+	var caja16171="";
+	var caja17181="";
+	var caja18191="";
+	var caja19201="";
+	var caja20211="";
+	var caja21221="";
+	var caja22231="";
+	var caja23241="";
+	var caja2411="";
+	var caja121="";
+	var caja231="";
+	var caja341="";
+	var caja451="";
+	var caja561="";
+	var hora67r=0;
+	var hora78r=0;
+	var hora89r=0;
+	var hora910r=0;
+	var hora1011r=0;
+	var hora1112r=0;
+	var hora1213r=0;
+	var hora1314r=0;
+	var hora1415r=0;
+	var hora1516r=0;
+	var hora1617r=0;
+	var hora1718r=0;
+	var hora1819r=0;
+	var hora1920r=0;
+	var hora2021r=0;
+	var hora2122r=0;
+	var hora2223r=0;
+	var hora2324r=0;
+	var hora241r=0;
+	var hora12r=0;
+	var hora23r=0;
+	var hora34r=0;
+	var hora45r=0;
+	var hora56r=0;
+	var P1Hora67=0;
+	var P1Hora78=0;
+	var P1Hora89=0;
+	var P1Hora910=0;
+	var P1Hora1011=0;
+	var P1Hora1112=0;
+	var P1Hora1213=0;
+	var P1Hora1314=0;
+	var tiempoP67=-120;
+	var tiempoP78=0;
+	var tiempoP89=0;
+	var tiempoP910=0;
+	var tiempoP1011=0;
+	var tiempoP1112=0;
+	var tiempoP1213=0;
+	var tiempoP1314=0;
+	var tiempoP1415=0;
+	var tiempoP1516=0;
+	var tiempoP1617=0;
+	var tiempoP1718=0;
+	var tiempoP1819=0;
+	var tiempoP1920=0;
+	var tiempoP2021=0;
+	var tiempoP2122=0;
+	var tiempoP2223=0;
+	var tiempoP2324=0;
+	var tiempoP241=0;
+	var tiempoP12=0;
+	var tiempoP23=0;
+	var tiempoP34=0;
+	var tiempoP45=0;
+	var tiempoP56=0;
+	var tiempoA67=-120;
+	var tiempoA78=-240;
+	var tiempoA89=-360;
+	var tiempoA910=-480;
+	var tiempoA1011=-600;
+	var tiempoA1112=-720;
+	var tiempoA1213=-840;
+	var tiempoA1314=-960;
+	var tiempoA1415=-1080;
+	var tiempoA1516=-1200;
+	var tiempoA1617=-1320;
+	var tiempoA1718=-1440;
+	var tiempoA1819=-1560;
+	var tiempoA1920=-1680;
+	var tiempoA2021=-1800;
+	var tiempoA2122=-1920;
+	var tiempoA2223=-2040;
+	var tiempoA2324=-2160;
+	var tiempoA241=-2280;
+	var tiempoA12=-2400;
+	var tiempoA23=-2520;
+	var tiempoA34=-2640;
+	var tiempoA45=-2760;
+	var tiempoA56=-2880;
+
+    // Recorrer las hojas de cálculo y obtener los valores deseados
+    worksheets.forEach(function(worksheet) {
+      sumaEficiencia += getCellValue(worksheet.V4);
+	  rendimientoJarabe += getCellValue(worksheet.W4);
+	  Desperfectos += getCellValue(worksheet.X4);
+	  Cumplimiento += getCellValue(worksheet.Y4);
+	  Sobservacion67 += getCellValue(worksheet.P10);
+	  Sobservacion78 += getCellValue(worksheet.P11);
+      Sobservacion89 += getCellValue(worksheet.P12);
+      Sobservacion910 += getCellValue(worksheet.P13);
+      Sobservacion1011 += getCellValue(worksheet.P14);
+      Sobservacion1112 += getCellValue(worksheet.P15);
+      Sobservacion1213 += getCellValue(worksheet.P16);
+      Sobservacion1314 += getCellValue(worksheet.P17);
+	  Sobservacion1415 += getCellValue(worksheet.P18);
+	  Sobservacion1516 += getCellValue(worksheet.P19);
+      Sobservacion1617 += getCellValue(worksheet.P20);
+      Sobservacion1718 += getCellValue(worksheet.P21);
+      Sobservacion1819 += getCellValue(worksheet.P22);
+      Sobservacion1920 += getCellValue(worksheet.P23);
+      Sobservacion2021 += getCellValue(worksheet.P24);
+      Sobservacion2122 += getCellValue(worksheet.P25);
+	  Sobservacion2223 += getCellValue(worksheet.P26);
+	  Sobservacion2324 += getCellValue(worksheet.P27);
+      Sobservacion241 += getCellValue(worksheet.P28);
+      Sobservacion12 += getCellValue(worksheet.P29);
+      Sobservacion23 += getCellValue(worksheet.P30);
+      Sobservacion34 += getCellValue(worksheet.P31);
+      Sobservacion45 += getCellValue(worksheet.P32);
+      Sobservacion56 += getCellValue(worksheet.P33);
+	  Sprogramacion67 += getCellValue(worksheet.C10);
+	  Sprogramacion78 += getCellValue(worksheet.C11);
+	  Sprogramacion89 += getCellValue(worksheet.C12);
+	  Sprogramacion910 += getCellValue(worksheet.C13);
+	  Sprogramacion1011 += getCellValue(worksheet.C14);
+	  Sprogramacion1112 += getCellValue(worksheet.C15);
+	  Sprogramacion1213 += getCellValue(worksheet.C16);
+      Sprogramacion1314 += getCellValue(worksheet.C17);
+      Sprogramacion1415 += getCellValue(worksheet.C18);
+      Sprogramacion1516 += getCellValue(worksheet.C19);
+	  Sprogramacion1617 += getCellValue(worksheet.C20);
+	  Sprogramacion1718 += getCellValue(worksheet.C21);
+	  Sprogramacion1819 += getCellValue(worksheet.C22);
+	  Sprogramacion1920 += getCellValue(worksheet.C23);
+	  Sprogramacion2021 += getCellValue(worksheet.C24);
+	  Sprogramacion2122 += getCellValue(worksheet.C25);
+	  Sprogramacion2223 += getCellValue(worksheet.C26);
+      Sprogramacion2324 += getCellValue(worksheet.C27);
+	  Sprogramacion241 += getCellValue(worksheet.C28);
+	  Sprogramacion12 += getCellValue(worksheet.C29);
+	  Sprogramacion23 += getCellValue(worksheet.C30);
+	  Sprogramacion34 += getCellValue(worksheet.C31);
+	  Sprogramacion45 += getCellValue(worksheet.C32);
+	  Sprogramacion56 += getCellValue(worksheet.C33);
+	  caja671 += getCellValue(worksheet.F10);
+	  caja781 += getCellValue(worksheet.F11);
+	  caja891 += getCellValue(worksheet.F12);
+	  caja9101 += getCellValue(worksheet.F13);
+	  caja10111 += getCellValue(worksheet.F14);
+	  caja11121 += getCellValue(worksheet.F15);
+	  caja12131 += getCellValue(worksheet.F16);
+	  caja13141 += getCellValue(worksheet.F17);
+	  caja14151 += getCellValue(worksheet.F18);
+	  caja15161 += getCellValue(worksheet.F19);
+	  caja16171 += getCellValue(worksheet.F20);
+	  caja17181 += getCellValue(worksheet.F21);
+	  caja18191 += getCellValue(worksheet.F22);
+	  caja19201 += getCellValue(worksheet.F23);
+	  caja20211 += getCellValue(worksheet.F24);
+	  caja21221 += getCellValue(worksheet.F25);
+	  caja22231 += getCellValue(worksheet.F26);
+	  caja23241 += getCellValue(worksheet.F27);
+	  caja2411 += getCellValue(worksheet.F28);
+	  caja121 += getCellValue(worksheet.F29);
+	  caja231 += getCellValue(worksheet.F30);
+	  caja341 += getCellValue(worksheet.F31);
+	  caja451 += getCellValue(worksheet.F32);
+	  caja561 += getCellValue(worksheet.F33);
+	  hora67r += getCellValue(worksheet.G10);
+	  hora78r += getCellValue(worksheet.G11);
+      hora89r += getCellValue(worksheet.G12);
+	  hora910r += getCellValue(worksheet.G13);
+	  
+      
+	  
+	  hora67 += getCellValue(worksheet.E10)-2500;
+	  hora78 += getCellValue(worksheet.E11)-5000;
+      hora89 += getCellValue(worksheet.E12)-7501;
+	  hora910 += getCellValue(worksheet.E13)-10001;
+      hora1011 += getCellValue(worksheet.E14)-12501;
+      hora1112 += getCellValue(worksheet.E15)-15001;
+      hora1213 += getCellValue(worksheet.E16)-17501;
+      hora1314 += getCellValue(worksheet.E17)-20002;
+      hora1415 += getCellValue(worksheet.E18)-22502;
+      hora1516 += getCellValue(worksheet.E19)-25002;
+      hora1617 += getCellValue(worksheet.E20)-27502;
+      hora1718 += getCellValue(worksheet.E21)-30002;
+      hora1819 += getCellValue(worksheet.E22)-32503;
+      hora1920 += getCellValue(worksheet.E23)-35003;
+      hora2021 += getCellValue(worksheet.E24)-37503;
+      hora2122 += getCellValue(worksheet.E25)-40003;
+	  hora2223 += getCellValue(worksheet.E26)-42503;
+      hora2324 += getCellValue(worksheet.E27)-45004;
+      hora241 += getCellValue(worksheet.E28)-47504;
+      hora12 += getCellValue(worksheet.E29)-50004;
+      hora23 += getCellValue(worksheet.E30)-52504;
+      hora34 += getCellValue(worksheet.E31)-55004;
+      hora45 += getCellValue(worksheet.E32)-57505;
+      hora56 += getCellValue(worksheet.E33)-60005;
+      hora1011r += getCellValue(worksheet.G14);
+      hora1112r += getCellValue(worksheet.G15);
+      hora1213r += getCellValue(worksheet.G16);
+      hora1314r += getCellValue(worksheet.G17);
+      hora1415r += getCellValue(worksheet.G18);
+      hora1516r += getCellValue(worksheet.G19);
+      hora1617r += getCellValue(worksheet.G20);
+      hora1718r += getCellValue(worksheet.G21);
+      hora1819r += getCellValue(worksheet.G22);
+      hora1920r += getCellValue(worksheet.G23);
+      hora2021r += getCellValue(worksheet.G24);
+      hora2122r += getCellValue(worksheet.G25);
+	  hora2223r += getCellValue(worksheet.G26);
+      hora2324r += getCellValue(worksheet.G27);
+      hora241r += getCellValue(worksheet.G28);
+      hora12r += getCellValue(worksheet.G29);
+      hora23r += getCellValue(worksheet.G30);
+      hora34r += getCellValue(worksheet.G31);
+      hora45r += getCellValue(worksheet.G32);
+      hora56r += getCellValue(worksheet.G33);
+	  P1Hora67 += getCellValue(worksheet.K10);
+	  P1Hora78 += getCellValue(worksheet.K11);
+	  P1Hora89 += getCellValue(worksheet.K12);
+	  P1Hora910 += getCellValue(worksheet.K13);
+	  P1Hora1011 += getCellValue(worksheet.K14);
+	  P1Hora1112 += getCellValue(worksheet.K15);
+	  P1Hora1213 += getCellValue(worksheet.K16);
+	  P1Hora1314 += getCellValue(worksheet.K17);
+	  tiempoP67 += getCellValue(worksheet.N10);
+	  tiempoP78 += getCellValue(worksheet.N11);
+	  tiempoP89 += getCellValue(worksheet.N12);
+	  tiempoP910 += getCellValue(worksheet.N13);
+	  tiempoP1011 += getCellValue(worksheet.N14);
+	  tiempoP1112 += getCellValue(worksheet.N15);
+	  tiempoP1213 += getCellValue(worksheet.N16);
+	  tiempoP1314 += getCellValue(worksheet.N17);
+	  tiempoP1415 += getCellValue(worksheet.N18);
+	  tiempoP1516 += getCellValue(worksheet.N19);
+	  tiempoP1617 += getCellValue(worksheet.N20);
+	  tiempoP1718 += getCellValue(worksheet.N21);
+	  tiempoP1819 += getCellValue(worksheet.N22);
+	  tiempoP1920 += getCellValue(worksheet.N23);
+	  tiempoP2021 += getCellValue(worksheet.N24);
+	  tiempoP2122 += getCellValue(worksheet.N25);
+	  tiempoP2223 += getCellValue(worksheet.N26);
+	  tiempoP2324 += getCellValue(worksheet.N27);
+	  tiempoP241 += getCellValue(worksheet.N28);
+	  tiempoP12 += getCellValue(worksheet.N29);
+	  tiempoP23 += getCellValue(worksheet.N30);
+	  tiempoP34 += getCellValue(worksheet.N31);
+	  tiempoP45 += getCellValue(worksheet.N32);
+	  tiempoP56 += getCellValue(worksheet.N33);
+
+	  tiempoA67 += getCellValue(worksheet.O10);
+	  tiempoA78 += getCellValue(worksheet.O11);
+	  tiempoA89 += getCellValue(worksheet.O12);
+	  tiempoA910 += getCellValue(worksheet.O13);
+	  tiempoA1011 += getCellValue(worksheet.O14);
+	  tiempoA1112 += getCellValue(worksheet.O15);
+	  tiempoA1213 += getCellValue(worksheet.O16);
+	  tiempoA1314 += getCellValue(worksheet.O17);
+	  tiempoA1415 += getCellValue(worksheet.O18);
+	  tiempoA1516 += getCellValue(worksheet.O19);
+	  tiempoA1617 += getCellValue(worksheet.O20);
+	  tiempoA1718 += getCellValue(worksheet.O21);
+	  tiempoA1819 += getCellValue(worksheet.O22);
+	  tiempoA1920 += getCellValue(worksheet.O23);
+	  tiempoA2021 += getCellValue(worksheet.O24);
+	  tiempoA2122 += getCellValue(worksheet.O25);
+	  tiempoA2223 += getCellValue(worksheet.O26);
+	  tiempoA2324 += getCellValue(worksheet.O27);
+	  tiempoA241 += getCellValue(worksheet.O28);
+	  tiempoA12 += getCellValue(worksheet.O29);
+	  tiempoA23 += getCellValue(worksheet.O30);
+	  tiempoA34 += getCellValue(worksheet.O31);
+	  tiempoA45 += getCellValue(worksheet.O32);
+	  tiempoA56 += getCellValue(worksheet.O33);
+    });
+   
+	var hora671 = parseFloat(hora67).toFixed(0);
+	var hora6711 = parseFloat(hora67r).toFixed(0);
+	var hora7811 = parseFloat(hora78r).toFixed(0);
+	var hora8911 = parseFloat(hora89r).toFixed(0);
+	var hora781 = parseFloat(hora78).toFixed(0);
+	var hora891 = parseFloat(hora89).toFixed(0);
+	var hora9101 = parseFloat(hora910).toFixed(0);
+	var hora10111 = parseFloat(hora1011).toFixed(0);
+	var hora11121 = parseFloat(hora1112).toFixed(0);
+	var hora12131 = parseFloat(hora1213).toFixed(0);
+	var hora13141 = parseFloat(hora1314).toFixed(0);
+	var hora14151 = parseFloat(hora1415).toFixed(0);
+	var hora15161 = parseFloat(hora1516).toFixed(0);
+	var hora16171 = parseFloat(hora1617).toFixed(0);
+	var hora17181 = parseFloat(hora1718).toFixed(0);
+	var hora18191 = parseFloat(hora1819).toFixed(0);
+	var hora19201 = parseFloat(hora1920).toFixed(0);
+	var hora20211 = parseFloat(hora2021).toFixed(0);
+	var hora21221 = parseFloat(hora2122).toFixed(0);
+	var hora22231 = parseFloat(hora2223).toFixed(0);
+	var hora23241 = parseFloat(hora2324).toFixed(0);
+	var hora2411 = parseFloat(hora241).toFixed(0);
+	var hora121 = parseFloat(hora12).toFixed(0);
+	var hora231 = parseFloat(hora23).toFixed(0);
+	var hora341 = parseFloat(hora34).toFixed(0);
+	var hora451 = parseFloat(hora45).toFixed(0);
+	var hora561 = parseFloat(hora56).toFixed(0);
+	var hora91011 = parseFloat(hora910r).toFixed(0);
+	var hora101111 = parseFloat(hora1011r).toFixed(0);
+	var hora111211 = parseFloat(hora1112r).toFixed(0);
+	var hora121311 = parseFloat(hora1213r).toFixed(0);
+	var hora131411 = parseFloat(hora1314r).toFixed(0);
+	var hora141511 = parseFloat(hora1415r).toFixed(0);
+	var hora151611 = parseFloat(hora1516r).toFixed(0);
+	var hora161711 = parseFloat(hora1617r).toFixed(0);
+	var hora171811 = parseFloat(hora1718r).toFixed(0);
+	var hora181911 = parseFloat(hora1819r).toFixed(0);
+	var hora192011 = parseFloat(hora1920r).toFixed(0);
+	var hora202111 = parseFloat(hora2021r).toFixed(0);
+	var hora212211 = parseFloat(hora2122r).toFixed(0);
+	var hora222311 = parseFloat(hora2223r).toFixed(0);
+	var hora232411 = parseFloat(hora2324r).toFixed(0);
+	var hora24111 = parseFloat(hora241r).toFixed(0);
+	var hora1211 = parseFloat(hora12r).toFixed(0);
+	var hora2311 = parseFloat(hora23r).toFixed(0);
+	var hora3411 = parseFloat(hora34r).toFixed(0);
+	var hora4511 = parseFloat(hora45r).toFixed(0);
+	var hora5611 = parseFloat(hora56r).toFixed(0);
+	var P1Hora67Texto= parseFloat(P1Hora67);
+	var P1Hora78Texto= parseFloat(P1Hora78);
+	var P1Hora89Texto= parseFloat(P1Hora89);
+	var P1Hora910Texto= parseFloat(P1Hora910);
+	var P1Hora1011Texto= parseFloat(P1Hora1011);
+	var P1Hora1112Texto= parseFloat(P1Hora1112);
+	var P1Hora1213Texto= parseFloat(P1Hora1213);
+	var P1Hora1314Texto= parseFloat(P1Hora1314);
+	var tiempoP671 = parseFloat(tiempoP67).toFixed(0);
+	var tiempoP781 = parseFloat(tiempoP78).toFixed(0);
+	var tiempoP891 = parseFloat(tiempoP89).toFixed(0);
+	var tiempoP9101 = parseFloat(tiempoP910).toFixed(0);
+	var tiempoP10111 = parseFloat(tiempoP1011).toFixed(0);
+	var tiempoP11121 = parseFloat(tiempoP1112).toFixed(0);
+	var tiempoP12131 = parseFloat(tiempoP1213).toFixed(0);
+	var tiempoP13141 = parseFloat(tiempoP1314).toFixed(0);
+	var tiempoP14151 = parseFloat(tiempoP1415).toFixed(0);
+	var tiempoP15161 = parseFloat(tiempoP1516).toFixed(0);
+	var tiempoP16171 = parseFloat(tiempoP1617).toFixed(0);
+	var tiempoP17181 = parseFloat(tiempoP1718).toFixed(0);
+	var tiempoP18191 = parseFloat(tiempoP1819).toFixed(0);
+	var tiempoP19201 = parseFloat(tiempoP1920).toFixed(0);
+	var tiempoP20211 = parseFloat(tiempoP2021).toFixed(0);
+	var tiempoP21221 = parseFloat(tiempoP2122).toFixed(0);
+	var tiempoP22231 = parseFloat(tiempoP2223).toFixed(0);
+	var tiempoP23241 = parseFloat(tiempoP2324).toFixed(0);
+	var tiempoP2411 = parseFloat(tiempoP241).toFixed(0);
+	var tiempoP121 = parseFloat(tiempoP12).toFixed(0);
+	var tiempoP231 = parseFloat(tiempoP23).toFixed(0);
+	var tiempoP341 = parseFloat(tiempoP34).toFixed(0);
+	var tiempoP451 = parseFloat(tiempoP45).toFixed(0);
+	var tiempoP561 = parseFloat(tiempoP56).toFixed(0);
+
+	var tiempoA671 = parseFloat(tiempoA67).toFixed(0);
+	var tiempoA781 = parseFloat(tiempoA78).toFixed(0);
+	var tiempoA891 = parseFloat(tiempoA89).toFixed(0);
+	var tiempoA9101 = parseFloat(tiempoA910).toFixed(0);
+	var tiempoA10111 = parseFloat(tiempoA1011).toFixed(0);
+	var tiempoA11121 = parseFloat(tiempoA1112).toFixed(0);
+	var tiempoA12131 = parseFloat(tiempoA1213).toFixed(0);
+	var tiempoA13141 = parseFloat(tiempoA1314).toFixed(0);
+	var tiempoA14151 = parseFloat(tiempoA1415).toFixed(0);
+	var tiempoA15161 = parseFloat(tiempoA1516).toFixed(0);
+	var tiempoA16171 = parseFloat(tiempoA1617).toFixed(0);
+	var tiempoA17181 = parseFloat(tiempoA1718).toFixed(0);
+	var tiempoA18191 = parseFloat(tiempoA1819).toFixed(0);
+	var tiempoA19201 = parseFloat(tiempoA1920).toFixed(0);
+	var tiempoA20211 = parseFloat(tiempoA2021).toFixed(0);
+	var tiempoA21221 = parseFloat(tiempoA2122).toFixed(0);
+	var tiempoA22231 = parseFloat(tiempoA2223).toFixed(0);
+	var tiempoA23241 = parseFloat(tiempoA2324).toFixed(0);
+	var tiempoA2411 = parseFloat(tiempoA241).toFixed(0);
+	var tiempoA121 = parseFloat(tiempoA12).toFixed(0);
+	var tiempoA231 = parseFloat(tiempoA23).toFixed(0);
+	var tiempoA341 = parseFloat(tiempoA34).toFixed(0);
+	var tiempoA451 = parseFloat(tiempoA45).toFixed(0);
+	var tiempoA561 = parseFloat(tiempoA56).toFixed(0);
+
+	var caja6711 = parseFloat(caja671).toFixed(0);
+	var caja7811 = parseFloat(caja781).toFixed(0);
+	var caja8911 = parseFloat(caja891).toFixed(0);
+	var caja91011 = parseFloat(caja9101).toFixed(0);
+	var caja101111 = parseFloat(caja10111).toFixed(0);
+	var caja111211 = parseFloat(caja11121).toFixed(0);
+	var caja121311 = parseFloat(caja12131).toFixed(0);
+	var caja131411 = parseFloat(caja13141).toFixed(0);
+	var caja141511 = parseFloat(caja14151).toFixed(0);
+	var caja151611 = parseFloat(caja15161).toFixed(0);
+	var caja161711 = parseFloat(caja16171).toFixed(0);
+	var caja171811 = parseFloat(caja17181).toFixed(0);
+	var caja181911 = parseFloat(caja18191).toFixed(0);
+	var caja192011 = parseFloat(caja19201).toFixed(0);
+	var caja202111 = parseFloat(caja20211).toFixed(0);
+	var caja212211 = parseFloat(caja21221).toFixed(0);
+	var caja222311 = parseFloat(caja22231).toFixed(0);
+	var caja232411 = parseFloat(caja23241).toFixed(0);
+	var caja24111 = parseFloat(caja2411).toFixed(0);
+	var caja1211 = parseFloat(caja121).toFixed(0);
+	var caja2311 = parseFloat(caja231).toFixed(0);
+	var caja3411 = parseFloat(caja341).toFixed(0);
+	var caja4511 = parseFloat(caja451).toFixed(0);
+	var caja5611 = parseFloat(caja561).toFixed(0);
+	
+    // Actualizar el contenido de los elementos con los ids "Eficienciadeproduccion" y "Rendimientojarabe"
+    
+	var spanEficiencia = document.getElementById('Eficienciadeproduccion');
+    spanEficiencia.innerText = sumaEficiencia.toString();
+	var spanRendimiento = document.getElementById('Rendimientojarabe');
+    spanRendimiento.innerText = rendimientoJarabe.toString();
+    var spanDesperfecto = document.getElementById('Desperfectos');
+    spanDesperfecto.innerText = Desperfectos.toString();;
+	var spanCumplimiento = document.getElementById('CumplimientoLimpieza');
+    spanCumplimiento.innerText = Cumplimiento.toString();
+	var spanObservacion67 = document.querySelector('.mb-0.my-label1');
+    spanObservacion67.innerText = Sobservacion67.toString();
+	var spanObservacion78 = document.querySelector('.mb-0.my-label2');
+    spanObservacion78.innerText = Sobservacion78.toString();
+	var spanObservacion89 = document.querySelector('.mb-0.my-label3');
+    spanObservacion89.innerText = Sobservacion89.toString();
+	var spanObservacion910 = document.querySelector('.mb-0.my-label4');
+    spanObservacion910.innerText = Sobservacion910.toString();
+	var spanObservacion1011 = document.querySelector('.mb-0.my-label5');
+    spanObservacion1011.innerText = Sobservacion1011.toString();
+	var spanObservacion1112 = document.querySelector('.mb-0.my-label6');
+    spanObservacion1112.innerText = Sobservacion1112.toString();
+	var spanObservacion1213 = document.querySelector('.mb-0.my-label7');
+    spanObservacion1213.innerText = Sobservacion1213.toString();
+	var spanObservacion1314 = document.querySelector('.mb-0.my-label8');
+    spanObservacion1314.innerText = Sobservacion1314.toString();
+	var spanObservacion1415 = document.querySelector('.mb-0.my-label9');
+    spanObservacion1415.innerText = Sobservacion1415.toString();
+	var spanObservacion1516 = document.querySelector('.mb-0.my-label10');
+    spanObservacion1516.innerText = Sobservacion1516.toString();
+	var spanObservacion1617 = document.querySelector('.mb-0.my-label11');
+    spanObservacion1617.innerText = Sobservacion1617.toString();
+	var spanObservacion1718 = document.querySelector('.mb-0.my-label12');
+    spanObservacion1718.innerText = Sobservacion1718.toString();
+	var spanObservacion1819 = document.querySelector('.mb-0.my-label13');
+    spanObservacion1819.innerText = Sobservacion1819.toString();
+	var spanObservacion1920 = document.querySelector('.mb-0.my-label14');
+    spanObservacion1920.innerText = Sobservacion1920.toString();
+	var spanObservacion2021 = document.querySelector('.mb-0.my-label15');
+    spanObservacion2021.innerText = Sobservacion2021.toString();
+	var spanObservacion2122 = document.querySelector('.mb-0.my-label16');
+    spanObservacion2122.innerText = Sobservacion2122.toString();
+	var spanObservacion2223= document.querySelector('.mb-0.my-label17');
+    spanObservacion2223.innerText = Sobservacion2223.toString();
+	var spanObservacion2324 = document.querySelector('.mb-0.my-label18');
+    spanObservacion2324.innerText = Sobservacion2324.toString();
+	var spanObservacion241 = document.querySelector('.mb-0.my-label19');
+    spanObservacion241.innerText = Sobservacion241.toString();
+	var spanObservacion12 = document.querySelector('.mb-0.my-label20');
+    spanObservacion12.innerText = Sobservacion12.toString();
+	var spanObservacion23 = document.querySelector('.mb-0.my-label21');
+    spanObservacion23.innerText = Sobservacion23.toString();
+	var spanObservacion34 = document.querySelector('.mb-0.my-label22');
+    spanObservacion34.innerText = Sobservacion34.toString();
+	var spanObservacion45 = document.querySelector('.mb-0.my-label23');
+    spanObservacion45.innerText = Sobservacion45.toString();
+	var spanObservacion56 = document.querySelector('.mb-0.my-label24');
+    spanObservacion56.innerText = Sobservacion56.toString();
+	Programacion67.innerHTML=Sprogramacion67.toString();
+	caja67.innerHTML ='Cajas '+ hora6711+'/ '+ 'Unidades '+ caja6711+' (6-7am)' ;
+	Programacion78.innerHTML=Sprogramacion78.toString();
+	caja78.innerHTML ='Cajas '+ hora7811+'/ '+ 'Unidades '+ caja7811+' (7-8am)';
+	Programacion89.innerHTML=Sprogramacion89.toString();
+	caja89.innerHTML ='Cajas '+ hora8911+'/ '+ 'Unidades '+ caja8911+' (8-9am)';
+	Programacion910.innerHTML=Sprogramacion910.toString();
+	caja910.innerHTML ='Cajas '+ hora91011+'/ '+ 'Unidades '+ caja91011+' (9-10am)';
+	Programacion1011.innerHTML=Sprogramacion1011.toString();
+	caja1011.innerHTML ='Cajas '+ hora101111+'/ '+ 'Unidades '+ caja101111+' (10-11am)';
+	Programacion1112.innerHTML=Sprogramacion1112.toString();
+	caja1112.innerHTML ='Cajas '+ hora111211+'/ '+ 'Unidades '+ caja111211+' (11-12pm)';
+	Programacion1213.innerHTML=Sprogramacion1213.toString();
+	caja1213.innerHTML ='Cajas '+ hora121311+'/ '+ 'Unidades '+ caja121311+' (12-13 pm)' ;
+	Programacion1314.innerHTML=Sprogramacion1314.toString();
+	caja1314.innerHTML ='Cajas '+ hora131411+'/ '+ 'Unidades '+ caja131411+' (13-14 pm)';
+	Programacion1415.innerHTML=Sprogramacion1415.toString();
+	caja1415.innerHTML ='Cajas '+ hora141511+'/ '+ 'Unidades '+ caja141511+' (14-15 pm)';
+	Programacion1516.innerHTML=Sprogramacion1516.toString();
+	caja1516.innerHTML ='Cajas '+ hora151611+'/ '+ 'Unidades '+ caja151611+' (15-16 pm)';
+	Programacion1617.innerHTML=Sprogramacion1617.toString();
+	caja1617.innerHTML ='Cajas '+ hora161711+'/ '+ 'Unidades '+ caja161711+' (16-17 pm)';
+	Programacion1718.innerHTML=Sprogramacion1718.toString();
+	caja1718.innerHTML ='Cajas '+ hora171811+'/ '+ 'Unidades '+ caja171811+' (17-18 pm)';
+	Programacion1819.innerHTML=Sprogramacion1819.toString();
+	caja1819.innerHTML ='Cajas '+ hora181911+'/ '+ 'Unidades '+ caja181911+' (18-19 pm)';
+	Programacion1920.innerHTML=Sprogramacion1920.toString();
+	caja1920.innerHTML ='Cajas '+ hora192011+'/ '+ 'Unidades '+ caja192011+' (19-20 pm)';
+	Programacion2021.innerHTML=Sprogramacion2021.toString();
+	caja2021.innerHTML ='Cajas '+ hora202111+'/ '+ 'Unidades '+ caja202111+' (20-21 pm)';
+	Programacion2122.innerHTML=Sprogramacion2122.toString();
+	caja2122.innerHTML ='Cajas '+ hora212211+'/ '+ 'Unidades '+ caja212211+' (21-22 pm)';
+	Programacion2223.innerHTML=Sprogramacion2223.toString();
+	caja2223.innerHTML ='Cajas '+ hora222311+'/ '+ 'Unidades '+ caja222311+' (22-23 pm)';
+	Programacion2324.innerHTML=Sprogramacion2324.toString();
+	caja2324.innerHTML ='Cajas '+ hora232411+'/ '+ 'Unidades '+ caja232411+' (23-24 am)';
+	Programacion241.innerHTML=Sprogramacion241.toString();
+	caja241.innerHTML ='Cajas '+ hora24111+'/ '+ 'Unidades '+ caja24111+' (24-1 am)';
+	Programacion12.innerHTML=Sprogramacion12.toString();
+	caja12.innerHTML ='Cajas '+ hora1211+'/ '+ 'Unidades '+ caja1211+' (1-2 am)';
+	Programacion23.innerHTML=Sprogramacion23.toString();
+	caja23.innerHTML ='Cajas '+ hora2311+'/ '+ 'Unidades '+ caja2311+' (2-3 am)';
+	Programacion34.innerHTML=Sprogramacion34.toString();
+	caja34.innerHTML ='Cajas '+ hora3411+'/ '+ 'Unidades '+ caja3411+' (3-4 am)';
+	Programacion45.innerHTML=Sprogramacion45.toString();
+	caja45.innerHTML ='Cajas '+ hora4511+'/ '+ 'Unidades '+ caja4511+' (4-5 am)';
+	Programacion56.innerHTML=Sprogramacion56.toString();
+	caja56.innerHTML ='Cajas '+ hora5611+'/ '+ 'Unidades '+ caja5611+' (5-6 am)';
+	// Actualiza el atributo 'style' del elemento Hora67 para modificar el ancho
+	PHora67.setAttribute('style', 'width: ' + (P1Hora67Texto*100) + '%;');
+
+// Actualiza el contenido del elemento Hora67l con el número de porcentaje formateado
+	PHora67l.innerHTML = (P1Hora67Texto*100).toFixed(2) +'%' ;
+	PHora78.setAttribute('style', 'width: ' + (P1Hora78Texto*100) + '%;');
+	PHora78l.innerHTML = (P1Hora78Texto*100).toFixed(2) +'%' ;
+	PHora89.setAttribute('style', 'width: ' + (P1Hora89Texto*100) + '%;');
+	PHora89l.innerHTML = (P1Hora89Texto*100).toFixed(2)+'%' ;
+	PHora910.setAttribute('style', 'width: ' + (P1Hora910Texto*100) + '%;');
+	PHora910l.innerHTML = (P1Hora910Texto*100).toFixed(2) +'%' ;
+	PHora1011l.innerHTML = (P1Hora1011Texto*100).toFixed(2)+'%' ;
+	PHora1011.setAttribute('style', 'width: ' + (P1Hora1011Texto*100) + '%;');
+	PHora1112l.innerHTML = (P1Hora1112Texto*100).toFixed(2) +'%' ;
+	PHora1112.setAttribute('style', 'width: ' + (P1Hora1112Texto*100) + '%;');
+	PHora1213l.innerHTML = (P1Hora1213Texto*100).toFixed(2) +'%' ;
+	PHora1213.setAttribute('style', 'width: ' + (P1Hora1213Texto*100) + '%;');
+	PHora1314l.innerHTML = (P1Hora1314Texto*100).toFixed(2) +'%' ;
+	PHora1314.setAttribute('style', 'width: ' + (P1Hora1314Texto*100) + '%;');
+
+	Teorica[0]=hora671;
+	Teorica[1]=hora781;
+	Teorica[2]=hora891;
+	Teorica[3]=hora9101;
+	Teorica[4]=hora10111;
+	Teorica[5]=hora11121;
+	Teorica[6]=hora12131;
+	Teorica[7]=hora13141;
+	Teorica1[0]=hora14151;
+	Teorica1[1]=hora15161;
+	Teorica1[2]=hora16171;
+	Teorica1[3]=hora17181;
+	Teorica1[4]=hora18191;
+	Teorica1[5]=hora19201;
+	Teorica1[6]=hora20211;
+	Teorica1[7]=hora21221;
+	Teorica2[0]=hora22231;
+	Teorica2[1]=hora23241;
+	Teorica2[2]=hora2411;
+	Teorica2[3]=hora121;
+	Teorica2[4]=hora231;
+	Teorica2[5]=hora341;
+	Teorica2[6]=hora451;
+	Teorica2[7]=hora561;
+
+	Real[0]=hora6711;
+	Real[1]=hora7811;
+	Real[2]=hora8911;
+	Real[3]=hora91011;
+	Real[4]=hora101111;
+	Real[5]=hora111211;
+	Real[6]=hora121311;
+	Real[7]=hora131411;
+	Real1[0]=hora141511;
+	Real1[1]=hora151611;
+	Real1[2]=hora161711;
+	Real1[3]=hora171811;
+	Real1[4]=hora181911;
+	Real1[5]=hora192011;
+	Real1[6]=hora202111;
+	Real1[7]=hora212211;
+	Real2[0]=hora222311;
+	Real2[1]=hora232411;
+	Real2[2]=hora24111;
+	Real2[3]=hora1211;
+	Real2[4]=hora2311;
+	Real2[5]=hora3411;
+	Real2[6]=hora4511;
+	Real2[7]=hora5611;
+	
+
+	TiempoPerdido[0]=tiempoP671;
+	TiempoPerdido[1]=tiempoP781;
+	TiempoPerdido[2]=tiempoP891;
+	TiempoPerdido[3]=tiempoP9101;
+	TiempoPerdido[4]=tiempoP10111;
+	TiempoPerdido[5]=tiempoP11121;
+	TiempoPerdido[6]=tiempoP12131;
+	TiempoPerdido[7]=tiempoP13141;
+	TiempoPerdido1[0]=tiempoP14151;
+	TiempoPerdido1[1]=tiempoP15161;
+	TiempoPerdido1[2]=tiempoP16171;
+	TiempoPerdido1[3]=tiempoP17181;
+	TiempoPerdido1[4]=tiempoP18191;
+	TiempoPerdido1[5]=tiempoP19201;
+	TiempoPerdido1[6]=tiempoP20211;
+	TiempoPerdido1[7]=tiempoP21221;
+	TiempoPerdido2[0]=tiempoP22231;
+	TiempoPerdido2[1]=tiempoP23241;
+	TiempoPerdido2[2]=tiempoP2411;
+	TiempoPerdido2[3]=tiempoP121;
+	TiempoPerdido2[4]=tiempoP231;
+	TiempoPerdido2[5]=tiempoP341;
+	TiempoPerdido2[6]=tiempoP451;
+	TiempoPerdido2[7]=tiempoP561;
+
+	TiempoAcumulado[0]=tiempoA671;
+	TiempoAcumulado[1]=tiempoA781;
+	TiempoAcumulado[2]=tiempoA891;
+	TiempoAcumulado[3]=tiempoA9101;
+	TiempoAcumulado[4]=tiempoA10111;
+	TiempoAcumulado[5]=tiempoA11121;
+	TiempoAcumulado[6]=tiempoA12131;
+	TiempoAcumulado[7]=tiempoA13141;
+	TiempoAcumulado1[0]=tiempoA14151;
+	TiempoAcumulado1[1]=tiempoA15161;
+	TiempoAcumulado1[2]=tiempoA16171;
+	TiempoAcumulado1[3]=tiempoA17181;
+	TiempoAcumulado1[4]=tiempoA18191;
+	TiempoAcumulado1[5]=tiempoA19201;
+	TiempoAcumulado1[6]=tiempoA20211;
+	TiempoAcumulado1[7]=tiempoA21221;
+	TiempoAcumulado2[0]=tiempoA22231;
+	TiempoAcumulado2[1]=tiempoA23241;
+	TiempoAcumulado2[2]=tiempoA2411;
+	TiempoAcumulado2[3]=tiempoA121;
+	TiempoAcumulado2[4]=tiempoA231;
+	TiempoAcumulado2[5]=tiempoA341;
+	TiempoAcumulado2[6]=tiempoA451;
+	TiempoAcumulado2[7]=tiempoA561;
+
+	
+	
+};
+
+
+xhr.send();
+};
+
+// Llamar a la función para actualizar los valores del arreglo 'Teorica'
+updateTeoricaValues();
+</script>
+
+<script>
+    function setCheckBoxes() {
+  var checkboxes = document.querySelectorAll('.form-check input[type="checkbox"]');
+  var currentHour = new Date().getHours();
+
+  for (var i = 0; i < checkboxes.length; i++) {
+    var checkbox = checkboxes[i];
+    var startHour = (i + 6) % 24;
+
+    if (startHour < currentHour) {
+      checkbox.checked = true;
+    } else {
+      checkbox.checked = false;
+    }
+  }
+}
+
+setCheckBoxes();
+
+  </script>
+
+</body>
+</html>
