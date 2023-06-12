@@ -508,7 +508,7 @@
 				  fontWeight: 'bold',
 				},
 			  },
-			  max: 41000,
+			  max: 43000,
 			},
 			fill: {
 			  opacity: 1,
@@ -652,7 +652,7 @@
 				  fontWeight: 'bold',
 				},
 			  },
-			  max: 21000,
+			  max: 63000,
 			},
 			fill: {
 			  opacity: 1,
